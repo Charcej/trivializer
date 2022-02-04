@@ -122,3 +122,76 @@ $('#sticky-1').on('click', function(){
     quiz.style.display = "flex";
 
 });
+
+$('header ul li').on('click', function(){
+
+    var span = $(this).find('span');
+
+    TweenMax.to(span, 0, { opacity: 0 });
+    TweenMax.to(span, 0.4, { top: 8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+
+});
+
+$('#genre-label1').on('click', function(){
+
+    if (document.getElementById('genre-1').checked){
+        console.log('works-1');
+    }
+
+});
+
+$('#genre-label2').on('click', function(){
+
+    if (document.getElementById('genre-2').checked){
+        console.log('works-2');
+    }
+
+});
+
+$('#genre-label3').on('click', function(){
+
+    if (document.getElementById('genre-3').checked){
+        console.log('works-3');
+    }
+
+});
+
+$('#genre-label4').on('click', function(){
+
+    if (document.getElementById('genre-4').checked){
+        console.log('works-4');
+    }
+
+});
+
+$('#genre-label5').on('click', function(){
+
+    if (document.getElementById('genre-5').checked){
+        console.log('works-5');
+    }
+
+});
+
+$('#genre-label6').on('click', function(){
+
+    if (document.getElementById('genre-6').checked){
+        console.log('works-6');
+    }
+
+});
+
+$('#genre-label7').on('click', function(){
+
+    if (document.getElementById('genre-7').checked){
+        console.log('works-7');
+    }
+
+});
+
+$('#genre-label8').on('click', function(){
+
+    if (document.getElementById('genre-8').checked){
+        console.log('works-8');
+    }
+
+});
