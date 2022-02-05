@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Project - 1</title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/tasks.css" />
@@ -15,16 +17,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    
 
 </head>
 <body>
 
     <div id="stick-buttons">
 
-        <div id="sticky-1"></div>
-        <div id="sticky-2"></div>
-        <div id="sticky-3"></div>
-        <div id="sticky-4"></div>
+        <div id="sticky-1" class="green"><span>I</span></div>
+        <div id="sticky-2" class="blue"><span>II</span></div>
+        <div id="sticky-3" class="red"><span>III</span></div>
 
     </div>
 
@@ -43,7 +45,94 @@
 
     </header>
 
-    <div class="row-if">
+    <div class="container">
+
+        <div id="page-1" class="row margin-top">
+
+            <div id="guide-2" class="seven columns height-test blue">
+
+            </div>
+
+            <div id="selection" class="five columns">
+
+                <div class="row">
+
+                    <div id="genre-header" class="twelve columns height-40">
+
+                    <h2>Select Genre(s)</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <label id="genre-label1" for="genre-1" class="button six columns red relative"><span><i class="fas fa-film"></i></span><p>Movies</p></label>
+                    <label id="genre-label2" for="genre-2" class="button six columns green relative"><span><i class="fas fa-atom"></i></span><p>Science</p></label>
+
+                </div>
+
+                <div class="row">
+
+                    <label id="genre-label3" for="genre-3" class="button six columns blue relative"><span><i class="fas fa-history"></i></span><p>History</p></label>
+                    <label id="genre-label4" for="genre-4" class="button six columns orange relative"><span><i class="fas fa-baseball-ball"></i></span><p>Sports</p></label>
+
+                </div>
+
+                <div class="row">
+
+                    <label id="genre-label5" for="genre-5" class="button six columns purple relative"><span><i class="fas fa-music"></i></span><p>Music</p></label>
+                    <label id="genre-label6" for="genre-6" class="button six columns yellow relative"><span><i class="fas fa-tv"></i></span><p>Television</p></label>
+
+                </div>
+
+                <div class="row">
+
+                    <label id="genre-label7" for="genre-7" class="button six columns cyan relative"><span><i class="fas fa-book"></i></span><p>Books</p></label>
+                    <label id="genre-label8" for="genre-8" class="button six columns pink relative"><span><i class="fas fa-globe"></i></span><p>Geography</p></label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div id="page-2" class="row margin-top">
+
+        <div id="quiz" class="twelve columns height-test blue">
+
+        <div class="header"></div>
+
+        <div class="time"></div>
+
+        <p id="question">Test for align</p>
+
+        <input type="radio" id="answer-1" name="quiz" />
+        <input type="radio" id="answer-2" name="quiz" />
+        <input type="radio" id="answer-3" name="quiz" />
+        <input type="radio" id="answer-4" name="quiz" />
+
+        <div class="quiz-buttons twelve columns">
+
+        <label id="lblAnswer1" for="answer-1" class="button red">Answer #1</label>
+        <label id="lblAnswer2" for="answer-2" class="button blue">Answer #2</label>
+
+        <label id="lblAnswer3" for="answer-3" class="button green">Answer #3</label>
+        <label id="lblAnswer4" for="answer-4" class="button orange">Answer #4</label>
+
+        </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="row-if">
 
     <article id="guide">
 
@@ -96,26 +185,11 @@
 
     <article id="quiz">
 
-        <div class="header"></div>
-
-        <div class="time"></div>
-
-        <p id="question">Test for align</p>
-
-        <input type="radio" id="answer-1" name="quiz" />
-        <input type="radio" id="answer-2" name="quiz" />
-        <input type="radio" id="answer-3" name="quiz" />
-        <input type="radio" id="answer-4" name="quiz" />
-
-        <label id="lblAnswer1">Answer #1</label>
-        <label id="lblAnswer2">Answer #2</label>
-        <label id="lblAnswer3">Answer #3</label>
-        <label id="lblAnswer4">Answer #4</label>
+        
 
     </article>
 
-    </div>
-
+    </div> -->
 
     <footer>
 
@@ -137,3 +211,14 @@
 <script src="./assets/js/script.js"></script>
 <script type="text/javascript" src="assets/js/animations.js"></script>
 </html>
+
+<!-- 
+Movies: <i class="fas fa-film"></i>
+Books: <i class="fas fa-book"></i>     (MAY COMBINE WITH ART)
+History: <i class="fas fa-history"></i>
+Music: <i class="fas fa-music"></i>
+Sports: <i class="fas fa-baseball-ball"></i>
+Television: <i class="fas fa-tv"></i>
+Science: <i class="fas fa-atom"></i>
+Geography: <i class="fas fa-globe"></i>
+-->
