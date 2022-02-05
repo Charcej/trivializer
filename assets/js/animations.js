@@ -68,7 +68,7 @@ $(document).ready(function() {
 
         function out(){
         
-            TweenMax.to($(this), 0.3, { right: -150, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+            TweenMax.to($(this), 0.3, { right: -175, transformOrigin:"50% 50%", ease:Power1.easeInOut });
         }
 
         $('#sticky-2').hover(over,out);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
         function out(){
         
-            TweenMax.to($(this), 0.3, { right: -150, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+            TweenMax.to($(this), 0.3, { right: -175, transformOrigin:"50% 50%", ease:Power1.easeInOut });
         }
 
         $('#sticky-3').hover(over,out);
@@ -92,34 +92,23 @@ $(document).ready(function() {
 
         function out(){
         
-            TweenMax.to($(this), 0.3, { right: -150, transformOrigin:"50% 50%", ease:Power1.easeInOut });
-        }
-
-        $('#sticky-4').hover(over,out);
-
-        function over(){
-        
-            TweenMax.to($(this), 0.3, { right: -40, transformOrigin:"50% 50%", ease:Power1.easeInOut });
-        }
-
-        function out(){
-        
-            TweenMax.to($(this), 0.3, { right: -150, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+            TweenMax.to($(this), 0.3, { right: -175, transformOrigin:"50% 50%", ease:Power1.easeInOut });
         }
     
 });
 
 $('#sticky-1').on('click', function(){
 
-    var guide = document.getElementById('guide');
-    var selection = document.getElementById('selection');
+    var page1 = document.getElementById('page-1');
+    var page2 = document.getElementById('page-2');
 
-    guide.style.display = "none";
-    selection.style.display = "none";
+    page1.style.display = "none";
 
-    var quiz = document.getElementById('quiz');
+    page2.style.display = "block";
 
-    quiz.style.display = "flex";
+    // var quiz = document.getElementById('quiz');
+
+    // quiz.style.display = "flex";
 
 });
 
@@ -127,8 +116,12 @@ $('header ul li').on('click', function(){
 
     var span = $(this).find('span');
 
+    var other = $('header ul li').find('span');
+
     TweenMax.to(span, 0, { opacity: 0 });
-    TweenMax.to(span, 0.4, { top: 8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    TweenMax.to(other, 0.4, { top: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    TweenMax.to(span, 0.4, { top: 0, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    
 
 });
 

@@ -12,6 +12,31 @@
 
 /* Colors */
 
+.height-40 {
+    height: 40px;
+}
+
+#genre-header {
+    display: flex;
+    align-items: center;
+}
+
+.relative {
+    position: relative;
+}
+
+#page-2 {
+    display: none;
+}
+
+.height-test {
+    height: auto;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
 .red{
     background: var(--red);
 }
@@ -87,11 +112,13 @@ header ul {
 header ul li {
     width: 150px;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     position: relative;
-    text-align: center;
-    text-shadow: 0px 0px 3px #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-shadow: 0px 0px 3px #fff; */
     letter-spacing: 1px;
 }
 
@@ -103,7 +130,6 @@ header ul li span {
     top: 50px;
     left: 15px;
     background: #fff;
-    filter: blur(1px);
 }
 
 header ul li:before { 
@@ -112,14 +138,13 @@ header ul li:before {
     z-index: -1;
     left: 0;
     right: 0;
-    bottom: -15px;
+    bottom: -20px;
     height: 5px;
     background: #fff;
     transform: translateY(5px);
     transition-property: transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in;
-    filter: blur(1px);
 }
 
 header ul li:hover {
@@ -177,33 +202,14 @@ footer ul li {
 
 /* Article ID's */
 
-.row-if {
-    display: inline-flex;
-    width: 100%;
-}
-
-#guide {
-    width: 55%;
+#guide-2 {
     height: 600px;
     background: #141414;
-    display: inline-flex;
     /* filter: blur(1px); */
-    margin: 20px;
     border-radius: 10px;
     box-shadow: var(--bshadow);
     border: 2px solid #555;
     opacity: 0.9;
-}
-
-#selection {
-    width: 25%;
-    height: 240px;
-    display: inline-flex;
-    /* filter: blur(1px); */
-    margin: 20px;
-    border-radius: 10px;
-    margin-left: 0;
-    flex-direction: column;
 }
 
 #selection input {
@@ -212,23 +218,11 @@ footer ul li {
 
 /* ETC */
 
-.button-row {
-    height: 40px;
-    display: flex;
-    margin: 10px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
 .button {
-    width: 40%;
-    height: 40px;
-    display: inline-flex;
-    position: relative;
-    margin: 0 5px;
+    height: 50px;
+    margin: 5px 5px;
     border-radius: 5px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -236,18 +230,22 @@ footer ul li {
 .button span {
     position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
     left: 10px;
     top: 10px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: #fff;
+    font-size: 20px;
 }
 
 .button p {
     color: #fff;
     font-weight: 700;
     margin-left: 10px;
+    font-size: 12px;
 }
 
 /* -- Stick Buttons -- */
@@ -264,59 +262,87 @@ footer ul li {
 
 #sticky-1 {
     width: 250px;
-    height: 45px;
+    height: 50px;
     position: absolute;
     top: 10px;
-    right: -150px;
+    right: -175px;
     display: flex;
-    background: #bc1313;
     border-radius: 10px;
 }
 
 #sticky-2 {
     width: 250px;
-    height: 45px;
+    height: 50px;
     position: absolute;
-    top: 65px;
-    right: -150px;
+    top: 70px;
+    right: -175px;
     display: flex;
-    background: #0fb556;
     border-radius: 10px;
 }
 
 #sticky-3 {
     width: 250px;
-    height: 45px;
+    height: 50px;
     position: absolute;
-    top: 120px;
-    right: -150px;
+    top: 130px;
+    right: -175px;
     display: flex;
-    background: #158db7;
     border-radius: 10px;
 }
 
-#sticky-4 {
-    width: 250px;
-    height: 45px;
+#sticky-1, #sticky-2, #sticky-3, #sticky-4 {
+    cursor: pointer;
+}
+
+#sticky-1 span, #sticky-2 span, #sticky-3 span {
     position: absolute;
-    top: 175px;
-    right: -150px;
     display: flex;
-    background: #c42c5f;
-    border-radius: 10px;
+    left: 10px;
+    font-family: 'Trajan';
+    font-size: 18px;
+    top: 14px;
+    color: #fff;
+    width: 50px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    text-shadow: 0px 0px 3px #fff;
+}
+
+#genre-header h2 {
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 /* Quiz */
 
 #quiz {
-    width: 600px;
     height: 500px;
     background: #fff;
-    display: none;
     border-radius: 10px;
     position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.quiz-buttons {
+    position: absolute;
+    bottom: 0;
+}
+
+.quiz-buttons label {
+    color: #fff;
+}
+
+#quiz input {
+    display: none;
 }
 
 #quiz-container {
@@ -348,7 +374,7 @@ footer ul li {
 
 #quiz p {
     position: relative;
-    top: -120px;
     font-size: 20px;
     font-weight: 500;
+    top: -100px;
 }
