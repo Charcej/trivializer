@@ -1,3 +1,51 @@
+:root {
+    --bshadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    --red: #c42d2d;
+    --blue: #0f55a8;
+    --green: #239e55;
+    --orange: #f2730a;
+    --purple: #a047b5;
+    --yellow: #e5c335;
+    --cyan: #16b5c1;
+    --pink: #e577ed;
+}
+
+/* Colors */
+
+.red{
+    background: var(--red);
+}
+
+.blue{
+    background: var(--blue);
+}
+
+.green{
+    background: var(--green);
+}
+
+.orange{
+    background: var(--orange);
+}
+
+.purple{
+    background: var(--purple);
+}
+
+.yellow{
+    background: var(--yellow);
+}
+
+.cyan{
+    background: var(--cyan);
+}
+
+.pink{
+    background: var(--pink);
+}
+
+/* -- Body -- */
+
 body{
     background: #242424;
     font-family: 'Poppins';
@@ -136,18 +184,20 @@ footer ul li {
 
 #guide {
     width: 55%;
-    height: 400px;
-    background: #fff;
+    height: 600px;
+    background: #141414;
     display: inline-flex;
     /* filter: blur(1px); */
     margin: 20px;
     border-radius: 10px;
+    box-shadow: var(--bshadow);
+    border: 2px solid #555;
+    opacity: 0.9;
 }
 
 #selection {
     width: 25%;
     height: 240px;
-    background: #555;
     display: inline-flex;
     /* filter: blur(1px); */
     margin: 20px;
@@ -177,7 +227,6 @@ footer ul li {
     height: 40px;
     display: inline-flex;
     position: relative;
-    background: red;
     margin: 0 5px;
     border-radius: 5px;
     justify-content: center;
