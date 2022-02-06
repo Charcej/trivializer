@@ -112,6 +112,36 @@ $('#sticky-1').on('click', function(){
 
 });
 
+$('#sticky-2').on('click', function(){
+
+    var page1 = document.getElementById('page-1');
+    var page2 = document.getElementById('page-2');
+
+    page1.style.display = "none";
+
+    page2.style.display = "block";
+
+    // var quiz = document.getElementById('quiz');
+
+    // quiz.style.display = "flex";
+
+});
+
+$('#sticky-3').on('click', function(){
+
+    var page1 = document.getElementById('page-1');
+    var page2 = document.getElementById('page-2');
+
+    page1.style.display = "none";
+
+    page2.style.display = "block";
+
+    // var quiz = document.getElementById('quiz');
+
+    // quiz.style.display = "flex";
+
+});
+
 $('header ul li').on('click', function(){
 
     var span = $(this).find('span');
@@ -121,6 +151,19 @@ $('header ul li').on('click', function(){
     TweenMax.to(span, 0, { opacity: 0 });
     TweenMax.to(other, 0.4, { top: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
     TweenMax.to(span, 0.4, { top: 0, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    
+
+});
+
+$('footer ul li').on('click', function(){
+
+    var span = $(this).find('span');
+
+    var other = $('footer ul li').find('span');
+
+    TweenMax.to(span, 0, { opacity: 0 });
+    TweenMax.to(other, 0.4, { bottom: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    TweenMax.to(span, 0.4, { bottom: 0, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
     
 
 });

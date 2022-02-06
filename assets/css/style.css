@@ -4,7 +4,7 @@
     --blue: #0f55a8;
     --green: #239e55;
     --orange: #f2730a;
-    --purple: #a047b5;
+    --purple: #613699;
     --yellow: #e5c335;
     --cyan: #16b5c1;
     --pink: #e577ed;
@@ -138,7 +138,7 @@ header ul li:before {
     z-index: -1;
     left: 0;
     right: 0;
-    bottom: -20px;
+    bottom: -22px;
     height: 5px;
     background: #fff;
     transform: translateY(5px);
@@ -153,19 +153,19 @@ header ul li:hover {
 }
 
 header ul li:nth-child(1):before {
-    background-color: red!important;
+    background-color: var(--red)!important;
 }
 
 header ul li:nth-child(2):before {
-    background-color: green!important;
+    background-color: var(--green)!important;
 }
 
 header ul li:nth-child(3):before {
-    background-color: blue!important;
+    background-color: var(--blue)!important;
 }
 
 header ul li:nth-child(4):before {
-    background-color: orange!important;
+    background-color: var(--orange)!important;
 }
 
 header ul li:hover:before, header ul li:focus:before, header ul li:active:before  {
@@ -191,13 +191,72 @@ footer ul {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 footer ul li {
     width: 150px;
     color: #fff;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul li span {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 50px;
+    left: 15px;
+    background: #fff;
+}
+
+footer ul li:before { 
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: -27px;
+    height: 5px;
+    background: #fff;
+    transform: translateY(0px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+
+footer ul li:hover {
+    transform: translateY(0px);
+    transition: 0.5s;
+}
+
+footer ul li:nth-child(1):before {
+    background-color: var(--yellow)!important;
+}
+
+footer ul li:nth-child(2):before {
+    background-color: var(--cyan)!important;
+}
+
+footer ul li:nth-child(3):before {
+    background-color: var(--purple)!important;
+}
+
+footer ul li:nth-child(4):before {
+    background-color: var(--pink)!important;
+}
+
+footer ul li:hover:before, footer ul li:focus:before, footer ul li:active:before  {
+    transform: translateY(5px);
+}
+
+footer ul li:hover {
+    cursor: pointer;
 }
 
 /* Article ID's */
@@ -208,7 +267,7 @@ footer ul li {
     /* filter: blur(1px); */
     border-radius: 10px;
     box-shadow: var(--bshadow);
-    border: 2px solid #555;
+    border: 1px solid #bbb;
     opacity: 0.9;
 }
 
@@ -241,6 +300,38 @@ footer ul li {
     font-size: 20px;
 }
 
+.button div {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.button div .left-check {
+    position: absolute;
+    display: flex;
+    left: 5px;
+    top: 20px;
+    width: 12px;
+    height: 3px;
+    background: green;
+    transform: rotate(45deg);
+    border-radius: 0;
+}
+
+.button div .right-check {
+    position: absolute;
+    display: flex;
+    right: 4px;
+    top: 16px;
+    width: 25px;
+    height: 3px;
+    background: green;
+    transform: rotate(-45deg);
+    border-radius: 0;
+}
+
 .button p {
     color: #fff;
     font-weight: 700;
@@ -268,6 +359,7 @@ footer ul li {
     right: -175px;
     display: flex;
     border-radius: 10px;
+    border: 1px solid #bbb;
 }
 
 #sticky-2 {
@@ -278,6 +370,7 @@ footer ul li {
     right: -175px;
     display: flex;
     border-radius: 10px;
+    border: 1px solid #bbb;
 }
 
 #sticky-3 {
@@ -288,6 +381,7 @@ footer ul li {
     right: -175px;
     display: flex;
     border-radius: 10px;
+    border: 1px solid #bbb;
 }
 
 #sticky-1, #sticky-2, #sticky-3, #sticky-4 {
