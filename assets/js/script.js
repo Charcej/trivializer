@@ -19,6 +19,84 @@ var level = "easy";
 var count = 0;
 var nxtCount = 0;
 
+var genres = ["11","10","17","23", "12", "21", "14", "22"];
+
+$('#genre-label1').on('click', function(){
+
+    genre = "11";
+    quizQuestions();
+
+});
+
+$('#genre-label2').on('click', function(){
+
+    genre = "17";
+    quizQuestions();
+
+});
+
+$('#genre-label3').on('click', function(){
+
+    genre = "23";
+    quizQuestions();
+
+});
+
+$('#genre-label4').on('click', function(){
+
+    genre = "21";
+    quizQuestions();
+
+});
+
+$('#genre-label5').on('click', function(){
+
+    genre = "12";
+    quizQuestions();
+
+});
+
+$('#genre-label6').on('click', function(){
+
+    genre = "14";
+    quizQuestions();
+
+});
+
+$('#genre-label7').on('click', function(){
+
+    genre = "10";
+    quizQuestions();
+
+});
+
+$('#genre-label8').on('click', function(){
+
+    genre = "22";
+    quizQuestions();
+
+});
+
+function appendQuestion() {
+
+var question1 = JSON.parse(localStorage.getItem('question1'));
+var question2 = JSON.parse(localStorage.getItem('question2'));
+var question3 = JSON.parse(localStorage.getItem('question3'));
+var question4 = JSON.parse(localStorage.getItem('question4'));
+var question5 = JSON.parse(localStorage.getItem('question5'));
+var question6 = JSON.parse(localStorage.getItem('question6'));
+var question7 = JSON.parse(localStorage.getItem('question7'));
+var question8 = JSON.parse(localStorage.getItem('question8'));
+var question9 = JSON.parse(localStorage.getItem('question9'));
+var question10 = JSON.parse(localStorage.getItem('question10'));
+var question11 = JSON.parse(localStorage.getItem('question11'));
+var question12 = JSON.parse(localStorage.getItem('question12'));
+var question13 = JSON.parse(localStorage.getItem('question13'));
+var question14 = JSON.parse(localStorage.getItem('question14'));
+var question15 = JSON.parse(localStorage.getItem('question15'));
+
+}
+
 //Clicking on the easy, medium and difficult side bars
 sticky1.addEventListener("click", function(event){
     event.preventDefault;
@@ -40,43 +118,134 @@ rdbAnswer1.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
-    storeJSONData();
+    if (nxtCount >= 0 && nxtCount <= 15) {
+
+        storeJSONData()
+
+        }
 });
 //Clicking on second answer option
 rdbAnswer2.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
-    storeJSONData();
+    if (nxtCount >= 0 && nxtCount <= 15) {
+
+        storeJSONData()
+
+        }
 });
 //Clicking on third answer option
 rdbAnswer3.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
-    storeJSONData();
+    if (nxtCount >= 0 && nxtCount <= 15) {
+
+        storeJSONData()
+
+        }
 });
 //Clicking on fourth answer option
 rdbAnswer4.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
-    storeJSONData();
+    if (nxtCount >= 0 && nxtCount <= 15) {
+
+        storeJSONData()
+
+        }
 });
 
 //Checking if the expected answer is equal to actual
 function userAnswerCheck(expected, actual){
-    console.log("expected.value: "+expected);
-    console.log("actual "+actual);
+    // console.log("expected.value: "+expected);
+    // console.log("actual "+actual);
     if (expected==actual){
-        console.log("right answer");
+        // console.log("right answer");
     }
+}
+
+        var movieSelected = false;
+        var scienceSelected = false;
+        var historySelected = false;
+        var sportsSelected = false;
+        var musicSelected = false;
+        var tvSelected = false;
+        var booksSelected = false;
+        var geoSelected = false;
+
+        var genreCount = 0;
+
+function questionCheck(data) {
+
+    check = [movieSelected, scienceSelected, historySelected, sportsSelected, musicSelected, tvSelected, booksSelected, geoSelected];
+
+    for (let i = 0; i < check.length; i++) {
+
+        // console.log(check[i]);
+     
+        if (check[i] === true && genreCount === 1){
+    
+            // console.log(check);
+            // console.log(genreCount);
+            console.log(data);
+
+            localStorage.setItem('question1', JSON.stringify(data.results[0]));
+            localStorage.setItem('question2', JSON.stringify(data.results[1]));
+            localStorage.setItem('question3', JSON.stringify(data.results[2]));
+            localStorage.setItem('question4', JSON.stringify(data.results[3]));
+            localStorage.setItem('question5', JSON.stringify(data.results[4]));
+            localStorage.setItem('question6', JSON.stringify(data.results[5]));
+            localStorage.setItem('question7', JSON.stringify(data.results[6]));
+            localStorage.setItem('question8', JSON.stringify(data.results[7]));
+            localStorage.setItem('question9', JSON.stringify(data.results[8]));
+            localStorage.setItem('question10', JSON.stringify(data.results[9]));
+            localStorage.setItem('question11', JSON.stringify(data.results[10]));
+            localStorage.setItem('question12', JSON.stringify(data.results[11]));
+            localStorage.setItem('question13', JSON.stringify(data.results[12]));
+            localStorage.setItem('question14', JSON.stringify(data.results[13]));
+            localStorage.setItem('question15', JSON.stringify(data.results[14]));
+        }
+
+        if (check[i] === true && genreCount === 2){
+    
+            // console.log(check);
+            // console.log(genreCount);
+
+            localStorage.setItem('question9', JSON.stringify(data.results[8]));
+            localStorage.setItem('question10', JSON.stringify(data.results[9]));
+            localStorage.setItem('question11', JSON.stringify(data.results[10]));
+            localStorage.setItem('question12', JSON.stringify(data.results[11]));
+            localStorage.setItem('question13', JSON.stringify(data.results[12]));
+            localStorage.setItem('question14', JSON.stringify(data.results[13]));
+            localStorage.setItem('question15', JSON.stringify(data.results[14]));
+
+        }
+
+        if (check[i] === true && genreCount === 3){
+    
+            // console.log(check);
+            // console.log(genreCount);
+
+            localStorage.setItem('question6', JSON.stringify(data.results[5]));
+            localStorage.setItem('question7', JSON.stringify(data.results[6]));
+            localStorage.setItem('question8', JSON.stringify(data.results[7]));
+            localStorage.setItem('question9', JSON.stringify(data.results[8]));
+            localStorage.setItem('question10', JSON.stringify(data.results[9]));
+
+        }
+        
+        
+    }
+
+
 }
 
 //Getting values from the API and storing in a local json object
 function quizQuestions(){
     var apiUrl = "https://opentdb.com/api.php?amount=15&category="+genre+"&difficulty="+level+"&type=multiple";
-    console.log(apiUrl);
     var options = [];
     fetch(apiUrl)
     .then(function(response){
@@ -85,19 +254,123 @@ function quizQuestions(){
     .then(function(data){
         storingQuizData = JSON.stringify(data);
         jsonData = JSON.parse(storingQuizData);
+        
+        if (data.results[0].category === "Entertainment: Film") {
+            if (movieSelected === true){
+                genreCount = genreCount;
+            } else {
+                movieSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+            
+        }
+
+        if (data.results[0].category === "Science & Nature") {
+            
+            if (scienceSelected === true){
+                genreCount = genreCount;
+            } else {
+                scienceSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+
+        }
+
+        if (data.results[0].category === "History") {
+            
+            if (historySelected === true){
+                genreCount = genreCount;
+            } else {
+                historySelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+        }
+
+        if (data.results[0].category === "Sports") {
+
+            if (sportsSelected === true){
+                genreCount = genreCount;
+            } else {
+                sportsSelected = true;
+                genreCount++;
+            }
+            
+            questionCheck(data);
+
+        }
+
+        if (data.results[0].category === "Entertainment: Music") {
+            if (musicSelected === true){
+                genreCount = genreCount;
+            } else {
+                musicSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+        }
+
+        if (data.results[0].category === "Entertainment: Television") {
+            if (tvSelected === true){
+                genreCount = genreCount;
+            } else {
+                tvSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+        }
+
+        if (data.results[0].category === "Entertainment: Books") {
+            if (booksSelected === true){
+                genreCount = genreCount;
+            } else {
+                booksSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+        }
+
+        if (data.results[0].category === "Geography") {
+            if (geoSelected === true){
+                genreCount = genreCount;
+            } else {
+                geoSelected = true;
+                genreCount++;
+            }
+
+            questionCheck(data);
+
+        }
+
+        // console.log(data);
+
+        if (nxtCount >= 0 && nxtCount <= 15) {
+
         storeJSONData()
+
+        }
+
+        return(data);
     });
 
 }
 
 //display the questions and answer options to the front end from JSON object
 function storeJSONData(){
-    if (nxtCount==15){
-        console.log("You have successfully completed the quiz");
+    if (nxtCount == 15){
+        // console.log("You have successfully completed the quiz");
         //Call the dashboard page here
     }
     //For now, the correct answer is hard coded to Option 4 and we need to randomize this
-    question.textContent = jsonData.results[nxtCount].question;
+    question.innerHTML = jsonData.results[nxtCount].question;
     lblAnswer1.textContent = jsonData.results[nxtCount].incorrect_answers[0]
     lblAnswer2.textContent = jsonData.results[nxtCount].incorrect_answers[1];
     lblAnswer3.textContent = jsonData.results[nxtCount].incorrect_answers[2];
@@ -105,4 +378,4 @@ function storeJSONData(){
 }
 
 //First method to call and invoke the API
-quizQuestions();
+// quizQuestions();
