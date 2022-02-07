@@ -364,6 +364,8 @@ footer ul li:hover {
     display: flex;
     border-radius: 10px;
     border: 1px solid #bbb;
+    justify-content: center;
+    align-items: center;
 }
 
 #sticky-2 {
@@ -375,6 +377,8 @@ footer ul li:hover {
     display: flex;
     border-radius: 10px;
     border: 1px solid #bbb;
+    justify-content: center;
+    align-items: center;
 }
 
 #sticky-3 {
@@ -386,9 +390,21 @@ footer ul li:hover {
     display: flex;
     border-radius: 10px;
     border: 1px solid #bbb;
+    justify-content: center;
+    align-items: center;
 }
 
-#sticky-1, #sticky-2, #sticky-3, #sticky-4 {
+#sticky-1 p, #sticky-2 p, #sticky-3 p {
+    color: #fff;
+    font-family: 'Poppins';
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#sticky-1, #sticky-2, #sticky-3 {
     cursor: pointer;
 }
 

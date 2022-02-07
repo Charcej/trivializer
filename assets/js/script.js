@@ -95,21 +95,57 @@ var question13 = JSON.parse(localStorage.getItem('question13'));
 var question14 = JSON.parse(localStorage.getItem('question14'));
 var question15 = JSON.parse(localStorage.getItem('question15'));
 
+questions = [
+    question1,
+    question2,
+    question3,
+    question4,
+    question5,
+    question6,
+    question7,
+    question8,
+    question9,
+    question10,
+    question11,
+    question12,
+    question13,
+    question14,
+    question15
+];
+
+console.log(questions);
+
+for (var i = 0; i < questions.length; i++) {
+    
+    // var question = questions[i];
+
+    var r = Math.floor(Math.random() * (i + 1));
+    var random = questions[i];
+    questions[i] = questions[r];
+    questions[r] = random;
+
+    console.log(random.correct_answer);
+    
+}
+
 }
 
 //Clicking on the easy, medium and difficult side bars
 sticky1.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
+    appendQuestion();
 });
 sticky2.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
+    appendQuestion();
     
 });
 sticky3.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
+    appendQuestion();
     
 });
 
