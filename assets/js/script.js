@@ -84,7 +84,7 @@ $('#genre-label8').on('click', function(){
 
 });
 
-function appendQuestion() {
+function appendQuestion(data) {
 
 var question1 = JSON.parse(localStorage.getItem('question1'));
 var question2 = JSON.parse(localStorage.getItem('question2'));
@@ -120,8 +120,6 @@ questions = [
     question15
 ];
 
-console.log(questions);
-
 // for (var i = 0; i < questions.length; i++) {
     
 //     // var question = questions[i];
@@ -135,6 +133,99 @@ console.log(questions);
     
 // }
 
+// question.innerHTML = data.results[nxtCount].question;
+//     for (var i = 0; i < 4; i++) {
+//         tempQuizAnswers = [data.results[nxtCount].incorrect_answers[0], data.results[nxtCount].incorrect_answers[1], data.results[nxtCount].incorrect_answers[2],data.results[nxtCount].correct_answer]
+//             var r = Math.floor(Math.random() * (i + 1));
+//             var random = tempQuizAnswers[i];
+//             tempQuizAnswers[i] = tempQuizAnswers[r];
+//             tempQuizAnswers[r] = random;
+//         }
+//             lblAnswer1.innerHTML = tempQuizAnswers[0];
+//             lblAnswer2.innerHTML = tempQuizAnswers[1];
+//             lblAnswer3.innerHTML = tempQuizAnswers[2];
+//             lblAnswer4.innerHTML = tempQuizAnswers[3];
+
+}
+
+function appendQuestionMedium(data2) {
+
+    var question1m = JSON.parse(localStorage.getItem('question1-m'));
+    var question2m = JSON.parse(localStorage.getItem('question2-m'));
+    var question3m = JSON.parse(localStorage.getItem('question3-m'));
+    var question4m = JSON.parse(localStorage.getItem('question4-m'));
+    var question5m = JSON.parse(localStorage.getItem('question5-m'));
+    var question6m = JSON.parse(localStorage.getItem('question6-m'));
+    var question7m = JSON.parse(localStorage.getItem('question7-m'));
+    var question8m = JSON.parse(localStorage.getItem('question8-m'));
+    var question9m = JSON.parse(localStorage.getItem('question9-m'));
+    var question10m = JSON.parse(localStorage.getItem('question10-m'));
+    var question11m = JSON.parse(localStorage.getItem('question11-m'));
+    var question12m = JSON.parse(localStorage.getItem('question12-m'));
+    var question13m = JSON.parse(localStorage.getItem('question13-m'));
+    var question14m = JSON.parse(localStorage.getItem('question14-m'));
+    var question15m = JSON.parse(localStorage.getItem('question15-m'));
+    
+    questions = [
+        question1m,
+        question2m,
+        question3m,
+        question4m,
+        question5m,
+        question6m,
+        question7m,
+        question8m,
+        question9m,
+        question10m,
+        question11m,
+        question12m,
+        question13m,
+        question14m,
+        question15m
+    ];
+    
+    console.log(questions);
+    
+}
+
+function appendQuestionHard(data3) {
+
+    var question1h = JSON.parse(localStorage.getItem('question1-h'));
+    var question2h = JSON.parse(localStorage.getItem('question2-h'));
+    var question3h = JSON.parse(localStorage.getItem('question3-h'));
+    var question4h = JSON.parse(localStorage.getItem('question4-h'));
+    var question5h = JSON.parse(localStorage.getItem('question5-h'));
+    var question6h = JSON.parse(localStorage.getItem('question6-h'));
+    var question7h = JSON.parse(localStorage.getItem('question7-h'));
+    var question8h = JSON.parse(localStorage.getItem('question8-h'));
+    var question9h = JSON.parse(localStorage.getItem('question9-h'));
+    var question10h = JSON.parse(localStorage.getItem('question10-h'));
+    var question11h = JSON.parse(localStorage.getItem('question11-h'));
+    var question12h = JSON.parse(localStorage.getItem('question12-h'));
+    var question13h = JSON.parse(localStorage.getItem('question13-h'));
+    var question14h = JSON.parse(localStorage.getItem('question14-h'));
+    var question15h = JSON.parse(localStorage.getItem('question15-h'));
+    
+    questions = [
+        question1h,
+        question2h,
+        question3h,
+        question4h,
+        question5h,
+        question6h,
+        question7h,
+        question8h,
+        question9h,
+        question10h,
+        question11h,
+        question12h,
+        question13h,
+        question14h,
+        question15h
+    ];
+    
+    console.log(questions);
+    
 }
 
 //Clicking on the easy, medium and difficult side bars
@@ -147,13 +238,13 @@ sticky1.addEventListener("click", function(event){
 sticky2.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
-    appendQuestion();
+    appendQuestionMedium();
     timeBarCount()
 });
 sticky3.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
-    appendQuestion();
+    appendQuestionHard();
     timeBarCount()
 });
 
@@ -260,39 +351,115 @@ function questionCheck(data) {
             localStorage.setItem('question15', JSON.stringify(data.results[14]));
         }
 
-        if (check[i] === true && genreCount === 2){
+        // if (check[i] === true && genreCount === 2){
+    
+        //     // console.log(check);
+        //     // console.log(genreCount);
+
+        //     localStorage.setItem('question9', JSON.stringify(data.results[8]));
+        //     localStorage.setItem('question10', JSON.stringify(data.results[9]));
+        //     localStorage.setItem('question11', JSON.stringify(data.results[10]));
+        //     localStorage.setItem('question12', JSON.stringify(data.results[11]));
+        //     localStorage.setItem('question13', JSON.stringify(data.results[12]));
+        //     localStorage.setItem('question14', JSON.stringify(data.results[13]));
+        //     localStorage.setItem('question15', JSON.stringify(data.results[14]));
+
+        // }
+
+        // if (check[i] === true && genreCount === 3){
+    
+        //     // console.log(check);
+        //     // console.log(genreCount);
+
+        //     localStorage.setItem('question6', JSON.stringify(data.results[5]));
+        //     localStorage.setItem('question7', JSON.stringify(data.results[6]));
+        //     localStorage.setItem('question8', JSON.stringify(data.results[7]));
+        //     localStorage.setItem('question9', JSON.stringify(data.results[8]));
+        //     localStorage.setItem('question10', JSON.stringify(data.results[9]));
+
+        // }
+
+        appendQuestion(data)
+    }
+}
+
+function questionCheckMedium(data2) {
+
+    check = [movieSelected, scienceSelected, historySelected, sportsSelected, musicSelected, tvSelected, booksSelected, geoSelected];
+
+    for (let i = 0; i < check.length; i++) {
+
+        // console.log(check[i]);
+     
+        if (check[i] === true && genreCount === 1){
     
             // console.log(check);
             // console.log(genreCount);
+            console.log(data2);
 
-            localStorage.setItem('question9', JSON.stringify(data.results[8]));
-            localStorage.setItem('question10', JSON.stringify(data.results[9]));
-            localStorage.setItem('question11', JSON.stringify(data.results[10]));
-            localStorage.setItem('question12', JSON.stringify(data.results[11]));
-            localStorage.setItem('question13', JSON.stringify(data.results[12]));
-            localStorage.setItem('question14', JSON.stringify(data.results[13]));
-            localStorage.setItem('question15', JSON.stringify(data.results[14]));
-
+            localStorage.setItem('question1-m', JSON.stringify(data2.results[0]));
+            localStorage.setItem('question2-m', JSON.stringify(data2.results[1]));
+            localStorage.setItem('question3-m', JSON.stringify(data2.results[2]));
+            localStorage.setItem('question4-m', JSON.stringify(data2.results[3]));
+            localStorage.setItem('question5-m', JSON.stringify(data2.results[4]));
+            localStorage.setItem('question6-m', JSON.stringify(data2.results[5]));
+            localStorage.setItem('question7-m', JSON.stringify(data2.results[6]));
+            localStorage.setItem('question8-m', JSON.stringify(data2.results[7]));
+            localStorage.setItem('question9-m', JSON.stringify(data2.results[8]));
+            localStorage.setItem('question10-m', JSON.stringify(data2.results[9]));
+            localStorage.setItem('question11-m', JSON.stringify(data2.results[10]));
+            localStorage.setItem('question12-m', JSON.stringify(data2.results[11]));
+            localStorage.setItem('question13-m', JSON.stringify(data2.results[12]));
+            localStorage.setItem('question14-m', JSON.stringify(data2.results[13]));
+            localStorage.setItem('question15-m', JSON.stringify(data2.results[14]));
         }
 
-        if (check[i] === true && genreCount === 3){
+        appendQuestionMedium(data2)
+
+    }
+}
+
+function questionCheckHard(data3) {
+
+    check = [movieSelected, scienceSelected, historySelected, sportsSelected, musicSelected, tvSelected, booksSelected, geoSelected];
+
+    for (let i = 0; i < check.length; i++) {
+
+        // console.log(check[i]);
+     
+        if (check[i] === true && genreCount === 1){
     
             // console.log(check);
             // console.log(genreCount);
+            console.log(data3);
 
-            localStorage.setItem('question6', JSON.stringify(data.results[5]));
-            localStorage.setItem('question7', JSON.stringify(data.results[6]));
-            localStorage.setItem('question8', JSON.stringify(data.results[7]));
-            localStorage.setItem('question9', JSON.stringify(data.results[8]));
-            localStorage.setItem('question10', JSON.stringify(data.results[9]));
-
+            localStorage.setItem('question1-h', JSON.stringify(data3.results[0]));
+            localStorage.setItem('question2-h', JSON.stringify(data3.results[1]));
+            localStorage.setItem('question3-h', JSON.stringify(data3.results[2]));
+            localStorage.setItem('question4-h', JSON.stringify(data3.results[3]));
+            localStorage.setItem('question5-h', JSON.stringify(data3.results[4]));
+            localStorage.setItem('question6-h', JSON.stringify(data3.results[5]));
+            localStorage.setItem('question7-h', JSON.stringify(data3.results[6]));
+            localStorage.setItem('question8-h', JSON.stringify(data3.results[7]));
+            localStorage.setItem('question9-h', JSON.stringify(data3.results[8]));
+            localStorage.setItem('question10-h', JSON.stringify(data3.results[9]));
+            localStorage.setItem('question11-h', JSON.stringify(data3.results[10]));
+            localStorage.setItem('question12-h', JSON.stringify(data3.results[11]));
+            localStorage.setItem('question13-h', JSON.stringify(data3.results[12]));
+            localStorage.setItem('question14-h', JSON.stringify(data3.results[13]));
+            localStorage.setItem('question15-h', JSON.stringify(data3.results[14]));
         }
+
+        appendQuestionHard(data3)
+
     }
 }
 
 //Getting values from the API and storing in a local json object
 function quizQuestions(){
-    var apiUrl = "https://opentdb.com/api.php?amount=15&category="+genre+"&difficulty="+level+"&type=multiple";
+    var apiUrl = "https://opentdb.com/api.php?amount=15&category="+genre+"&difficulty=easy&type=multiple";
+    var apiUrl2 = "https://opentdb.com/api.php?amount=15&category="+genre+"&difficulty=medium&type=multiple";
+    var apiUrl3 = "https://opentdb.com/api.php?amount=15&category="+genre+"&difficulty=hard&type=multiple";
     var options = [];
     fetch(apiUrl)
     .then(function(response){
@@ -405,7 +572,218 @@ function quizQuestions(){
 
         }
 
-        return(data);
+        return fetch (apiUrl2)
+
+        .then(function(response){
+            return response.json(response);
+        })
+
+        .then(function(data2){
+            console.log(data2);
+
+            if (data.results[0].category === "Entertainment: Film") {
+                if (movieSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    movieSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+                
+            }
+    
+            if (data.results[0].category === "Science & Nature") {
+                
+                if (scienceSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    scienceSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+    
+            }
+    
+            if (data.results[0].category === "History") {
+                
+                if (historySelected === true){
+                    genreCount = genreCount;
+                } else {
+                    historySelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+            }
+    
+            if (data.results[0].category === "Sports") {
+    
+                if (sportsSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    sportsSelected = true;
+                    genreCount++;
+                }
+                
+                questionCheckMedium(data2);
+    
+            }
+    
+            if (data.results[0].category === "Entertainment: Music") {
+                if (musicSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    musicSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+            }
+    
+            if (data.results[0].category === "Entertainment: Television") {
+                if (tvSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    tvSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+            }
+    
+            if (data.results[0].category === "Entertainment: Books") {
+                if (booksSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    booksSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+            }
+    
+            if (data.results[0].category === "Geography") {
+                if (geoSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    geoSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckMedium(data2);
+    
+            }
+
+            return fetch (apiUrl3)
+
+        .then(function(response){
+            return response.json(response);
+        })
+
+        .then(function(data3){
+            console.log(data3);
+
+            if (data.results[0].category === "Entertainment: Film") {
+                if (movieSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    movieSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+                
+            }
+    
+            if (data.results[0].category === "Science & Nature") {
+                
+                if (scienceSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    scienceSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+    
+            }
+    
+            if (data.results[0].category === "History") {
+                
+                if (historySelected === true){
+                    genreCount = genreCount;
+                } else {
+                    historySelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+            }
+    
+            if (data.results[0].category === "Sports") {
+    
+                if (sportsSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    sportsSelected = true;
+                    genreCount++;
+                }
+                
+                questionCheckHard(data3);
+    
+            }
+    
+            if (data.results[0].category === "Entertainment: Music") {
+                if (musicSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    musicSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+            }
+    
+            if (data.results[0].category === "Entertainment: Television") {
+                if (tvSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    tvSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+            }
+    
+            if (data.results[0].category === "Entertainment: Books") {
+                if (booksSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    booksSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+            }
+    
+            if (data.results[0].category === "Geography") {
+                if (geoSelected === true){
+                    genreCount = genreCount;
+                } else {
+                    geoSelected = true;
+                    genreCount++;
+                }
+    
+                questionCheckHard(data3);
+    
+            }
+
+        })
+
+        })
+
     });
 
 }
