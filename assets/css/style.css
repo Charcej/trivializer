@@ -512,6 +512,7 @@ footer ul li:hover {
     top: -100px;
     margin: 0 50px;
 }
+
 #divCountdownBar{
     position: absolute;
     left: 200px;
@@ -527,6 +528,7 @@ footer ul li:hover {
     background: lightgray;
     height: 10px;
 }
+
 /* DASHBOARD PAGE */
 
 #page-dashboard {
