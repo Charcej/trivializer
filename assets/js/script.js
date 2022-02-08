@@ -20,6 +20,7 @@ var count = 0;
 var nxtCount = 0;
 
 var genres = ["11","10","17","23", "12", "21", "14", "22"];
+var tempQuizAnswers = [];
 
 $('#genre-label1').on('click', function(){
 
@@ -115,18 +116,18 @@ questions = [
 
 console.log(questions);
 
-for (var i = 0; i < questions.length; i++) {
+// for (var i = 0; i < questions.length; i++) {
     
-    // var question = questions[i];
+//     // var question = questions[i];
 
-    var r = Math.floor(Math.random() * (i + 1));
-    var random = questions[i];
-    questions[i] = questions[r];
-    questions[r] = random;
+//     var r = Math.floor(Math.random() * (i + 1));
+//     var random = questions[i];
+//     questions[i] = questions[r];
+//     questions[r] = random;
 
-    console.log(random.correct_answer);
+//     console.log(random.correct_answer);
     
-}
+// }
 
 }
 
@@ -152,7 +153,7 @@ sticky3.addEventListener("click", function(event){
 //Clicking on first answer option
 rdbAnswer1.addEventListener("click", function(event){
     event.preventDefault;
-    userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
 
@@ -163,7 +164,7 @@ rdbAnswer1.addEventListener("click", function(event){
 //Clicking on second answer option
 rdbAnswer2.addEventListener("click", function(event){
     event.preventDefault;
-    userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
 
@@ -174,7 +175,7 @@ rdbAnswer2.addEventListener("click", function(event){
 //Clicking on third answer option
 rdbAnswer3.addEventListener("click", function(event){
     event.preventDefault;
-    userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
 
@@ -185,7 +186,7 @@ rdbAnswer3.addEventListener("click", function(event){
 //Clicking on fourth answer option
 rdbAnswer4.addEventListener("click", function(event){
     event.preventDefault;
-    userAnswerCheck(lblAnswer4.textContent, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
 
@@ -196,10 +197,10 @@ rdbAnswer4.addEventListener("click", function(event){
 
 //Checking if the expected answer is equal to actual
 function userAnswerCheck(expected, actual){
-    // console.log("expected.value: "+expected);
-    // console.log("actual "+actual);
+    console.log("expected.value: "+expected);
+    console.log("actual "+actual);
     if (expected==actual){
-        // console.log("right answer");
+        console.log("right answer");
     }
 }
 
@@ -272,11 +273,7 @@ function questionCheck(data) {
             localStorage.setItem('question10', JSON.stringify(data.results[9]));
 
         }
-        
-        
     }
-
-
 }
 
 //Getting values from the API and storing in a local json object
@@ -401,17 +398,18 @@ function quizQuestions(){
 
 //display the questions and answer options to the front end from JSON object
 function storeJSONData(){
-    if (nxtCount == 15){
-        // console.log("You have successfully completed the quiz");
-        //Call the dashboard page here
-    }
-    //For now, the correct answer is hard coded to Option 4 and we need to randomize this
     question.innerHTML = jsonData.results[nxtCount].question;
-    lblAnswer1.textContent = jsonData.results[nxtCount].incorrect_answers[0]
-    lblAnswer2.textContent = jsonData.results[nxtCount].incorrect_answers[1];
-    lblAnswer3.textContent = jsonData.results[nxtCount].incorrect_answers[2];
-    lblAnswer4.textContent = jsonData.results[nxtCount].correct_answer;
+    for (var i = 0; i < 4; i++) {
+        tempQuizAnswers = [jsonData.results[nxtCount].incorrect_answers[0], jsonData.results[nxtCount].incorrect_answers[1], jsonData.results[nxtCount].incorrect_answers[2],jsonData.results[nxtCount].correct_answer]
+            var r = Math.floor(Math.random() * (i + 1));
+            var random = tempQuizAnswers[i];
+            tempQuizAnswers[i] = tempQuizAnswers[r];
+            tempQuizAnswers[r] = random;
+        }
+
+            lblAnswer1.textContent = tempQuizAnswers[0];
+            lblAnswer2.textContent = tempQuizAnswers[1];
+            lblAnswer3.textContent = tempQuizAnswers[2];
+            lblAnswer4.textContent = tempQuizAnswers[3];
 }
 
-//First method to call and invoke the API
-// quizQuestions();
