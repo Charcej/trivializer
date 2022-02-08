@@ -74,13 +74,15 @@
 body{
     background: #242424;
     font-family: 'Poppins';
+    width: 100%;
 }
 
 /* Element Seletors */
 
 section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
     overflow-x: hidden;
     background: #158db7 url('../images/img-4.jpg') no-repeat;
     background-size: cover;
@@ -350,7 +352,7 @@ footer ul li:hover {
 
 #stick-buttons {
     width: 250px;
-    position: fixed;
+    position: absolute;
     display: flex;
     right: 0;
     top: 70px;
@@ -645,4 +647,109 @@ footer ul li:hover {
     height: 15px;
     display: inline-flex;
     border-radius: 5px;
+}
+
+.question-block {
+    height: 180px;
+    /* background: #000; */
+    display: flex;
+    position: relative;
+    margin-left: 20px!important;
+}
+
+.results-questions {
+    height: auto;
+    background: #141414;
+    opacity: 0.9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: var(--bshadow);
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.q-row {
+    height: 180px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.margin-top-q {
+    margin-top: 50px;
+}
+
+.q-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.q-header h3 {
+    color: #fff;
+    font-size: 10px;
+    font-family: 'Safety';
+    letter-spacing: 1px;
+}
+
+.q-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+}
+
+.q-question {
+    width: 100%;
+    position: absolute;
+    top: 35px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.q-question p {
+    font-family: 'Poppins';
+    font-size: 12px;
+    color: #fff;
+    margin: 0 20px;
+}
+
+.q-answers {
+    position: absolute;
+    bottom: 5px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.q-answers li {
+    height: 20px!important;
+    font-size: 14px;
+    margin-left: 20px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.q-answers li span {
+    position: absolute;
+    height: 15px;
+    width: 14px;
+    right: 14px;
+    border-radius: 5px;
+    background: #fff;
 }
