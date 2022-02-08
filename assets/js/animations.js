@@ -108,6 +108,42 @@ $('footer ul li').on('click', function(){
 
 });
 
+
+// Header + Footer Displays
+
+var header = $('header');
+var headerUL = $('header ul');
+
+var link1 = headerUL.find('li:nth-child(1)');
+var link2 = headerUL.find('li:nth-child(2)');
+var link3 = headerUL.find('li:nth-child(3)');
+var link4 = headerUL.find('li:nth-child(4)');
+
+link3.on('click', function(){
+
+    var page1 = document.getElementById('page-1');
+    var page2 = document.getElementById('page-2');
+    var page3 = document.getElementById('page-dashboard');
+
+    page1.style.display = "none";
+
+    page2.style.display = "none";
+
+    page3.style.display = "block";
+
+    new Circlebar({
+        element : "#progressBar",
+        type : "progress",
+        size : "150px",
+        dialWidth: 18,
+        fontSize:"24px",
+        fontColor:"rgb(255, 255, 255)",
+        maxValue : 100,
+    });
+
+});
+
+
 // On Click Label animations
 
 $('#genre-label1').on('click', function(){
