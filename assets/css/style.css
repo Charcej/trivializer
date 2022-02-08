@@ -493,3 +493,19 @@ footer ul li:hover {
     top: -100px;
     margin: 0 50px;
 }
+
+#divCountdownBar{
+    position: absolute;
+    left: 200px;
+    width: 500px;
+    height: 10px;
+    top: 200px;
+    border: 2 px black solid;
+    background: linear-gradient(to right, red, yellow, green);
+}
+
+#divTimeLeft{
+    float: right;
+    background: lightgray;
+    height: 10px;
+}

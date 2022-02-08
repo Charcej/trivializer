@@ -22,6 +22,11 @@ var nxtCount = 0;
 var genres = ["11","10","17","23", "12", "21", "14", "22"];
 var tempQuizAnswers = [];
 
+//Variables for count down bar
+var divCountdownBar = document.getElementById("divCountdownBar");
+var divTimeLeft = document.getElementById("divTimeLeft");
+var startTimer;
+
 $('#genre-label1').on('click', function(){
 
     genre = "11";
@@ -136,17 +141,20 @@ sticky1.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
     appendQuestion();
+    timeBarCount();
 });
 sticky2.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
     appendQuestion();
+    timeBarCount()
     
 });
 sticky3.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
     appendQuestion();
+    timeBarCount()
     
 });
 
@@ -155,6 +163,9 @@ rdbAnswer1.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
+    clearTimer();
+    timeBarCount();
+    
     if (nxtCount >= 0 && nxtCount <= 15) {
 
         storeJSONData()
@@ -166,6 +177,8 @@ rdbAnswer2.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
+    clearTimer();
+    timeBarCount();
     if (nxtCount >= 0 && nxtCount <= 15) {
 
         storeJSONData()
@@ -177,6 +190,8 @@ rdbAnswer3.addEventListener("click", function(event){
     event.preventDefault;
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
+    clearTimer();
+    timeBarCount();
     if (nxtCount >= 0 && nxtCount <= 15) {
 
         storeJSONData()
@@ -186,6 +201,8 @@ rdbAnswer3.addEventListener("click", function(event){
 //Clicking on fourth answer option
 rdbAnswer4.addEventListener("click", function(event){
     event.preventDefault;
+    clearTimer();
+    timeBarCount();
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
@@ -406,10 +423,27 @@ function storeJSONData(){
             tempQuizAnswers[i] = tempQuizAnswers[r];
             tempQuizAnswers[r] = random;
         }
-
             lblAnswer1.textContent = tempQuizAnswers[0];
             lblAnswer2.textContent = tempQuizAnswers[1];
             lblAnswer3.textContent = tempQuizAnswers[2];
             lblAnswer4.textContent = tempQuizAnswers[3];
+}
+
+function timeBarCount(){
+startTimer = setInterval(barCount,20);
+function barCount(){
+    if (divTimeLeft.clientWidth < divCountdownBar.clientWidth){
+        divTimeLeft.style.width = divTimeLeft.clientWidth + 1 +"px";
+}
+    else{
+        divTimeLeft.style.width = divCountdownBar.clientWidth + "px";
+        clearInterval(startTimer);
+    }
+}
+}
+
+function clearTimer(){
+    clearInterval(startTimer);
+    divTimeLeft.style.width = "0px";
 }
 
