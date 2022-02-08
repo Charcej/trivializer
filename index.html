@@ -10,43 +10,49 @@
 
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/circle.css" />
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script type="text/javascript" src="./assets/js/circle.js"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     
 
 </head>
 <body>
 
-    <div id="stick-buttons">
-
-        <div id="sticky-1" class="green"><span>I</span><p>Easy</p></div>
-        <div id="sticky-2" class="blue"><span>II</span><p>Medium</p></div>
-        <div id="sticky-3" class="red"><span>III</span><p>Hard</p></div>
-
-    </div>
-
     <section>
+
+        <div id="stick-buttons">
+
+            <div id="sticky-1" class="green"><span>I</span><p>Easy</p></div>
+            <div id="sticky-2" class="blue"><span>II</span><p>Medium</p></div>
+            <div id="sticky-3" class="red"><span>III</span><p>Hard</p></div>
+    
+        </div>
 
     <header>
 
+        <div class="title-logo">
+            <img src="./assets/images/Logo4.svg" alt="" />
+        </div>
+
         <ul>
 
-            <li>Link 1<span></span></li>
-            <li>Link 2<span></span></li>
-            <li>Link 3<span></span></li>
+            <li>Home<span></span></li>
+            <li>About<span></span></li>
+            <li>Dashboard<span></span></li>
             <li>Link 4<span></span></li>
 
         </ul>
 
     </header>
 
-    <div class="container">
+    <div id="page-1" class="container">
 
-        <div id="page-1" class="row margin-top">
+        <div class="row margin-top">
 
             <div id="guide-2" class="seven columns height-test blue">
 
@@ -132,9 +138,9 @@
 
     </div>
 
-    <div class="container">
+    <div id="page-2" class="container">
 
-        <div id="page-2" class="row margin-top">
+        <div class="row margin-top">
 
         <div id="quiz" class="twelve columns height-test blue">
 
@@ -168,64 +174,564 @@
 
     </div>
 
-    <!-- <div class="row-if">
+    <div id="page-dashboard" class="container">
 
-    <article id="guide">
+        <div class="row margin-top">
 
-    </article>
+            <div class="six columns results-progress">
 
-    <article id="selection">
+            <div id="progressBar">
 
-        <input type="radio" id="genre-1" name="genres" />
-        <input type="radio" id="genre-2" name="genres" />
-        <input type="radio" id="genre-3" name="genres" />
-        <input type="radio" id="genre-4" name="genres" />
-        <input type="radio" id="genre-5" name="genres" />
-        <input type="radio" id="genre-6" name="genres" />
-        <input type="radio" id="genre-7" name="genres" />
-        <input type="radio" id="genre-8" name="genres" />
+                  <div class="loader-bg">
+                    <div class="text"></div>
+                  </div>
 
-        <div class="button-row">
+            </div>
 
-            <label id="genre-label1" for="genre-1" class="button red"><span></span><p>Genre 1</p></label>
-            <label id="genre-label2" for="genre-2" class="button blue"><span></span><p>Genre 2</p></label>
+            <div class="box-header">
+                <h2>Previous Quiz</h2>
+            </div>
+
+                <div class="box-content">
+
+                    <h3>Score :</h3>
+
+                    <h2 id="score-final">15</h2>
+                    <h2 id="slash">/</h2>
+                    <h2 id="total">15</h2>
+
+                    <div id="genre-icons">
+
+                        <span class="red"><i class="fas fa-film"></i></span>
+                        <span class="green"><i class="fas fa-atom"></i></span>
+                        <span class="blue"><i class="fas fa-history"></i></span>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="six columns results-progress">
+
+                <div class="box-header">
+                    <h2>High Scores</h2>
+                </div>
+
+                <div class="twelve columns high-score">
+
+                <table>
+
+                    <tr>
+                    <th>Initials</th>
+                    <th>Score</th>
+                    <th>Genres</th>
+                    <th>Difficulty</th>
+                    </tr>
+
+                    <tr>
+                        <td>RL</td>
+                        <td>15/15</td>
+                        <td>
+                            
+                            <span class="red"></span>
+                            <span class="green"></span>
+                            <span class="blue"></span>
+                        
+                        </td>
+                        <td>MEDIUM</td>
+                    </tr>
+
+                    <tr>
+                        <td>CJ</td>
+                        <td>15/15</td>
+                        <td>
+
+                            <span class="red"></span>
+                            <span class="yellow"></span>
+                            <span class="pink"></span>
+
+                        </td>
+                        <td>HARD</td>
+                    </tr>
+
+                    <tr>
+                        <td>VJ</td>
+                        <td>15/15</td>
+                        <td>
+
+                            <span class="orange"></span>
+                            <span class="purple"></span>
+                            <span class="yellow"></span>
+
+                        </td>
+                        <td>EASY</td>
+                    </tr>
+
+                    <tr>
+                        <td>OLEG</td>
+                        <td>15/15</td>
+                        <td>
+
+                            <span class="green"></span>
+                            <span class="blue"></span>
+                            <span class="pink"></span>
+
+                        </td>
+                        <td>MEDIUM</td>
+                    </tr>
+
+                </table>
+
+                </div>
+                    
+            </div>
 
         </div>
 
-        <div class="button-row">
+        <div class="row margin-top">
 
-            <label id="genre-label3" for="genre-3" for="radio1" class="button green"><span></span><p>Genre 1</p></label>
-            <label id="genre-label4" for="genre-4" class="button orange"><span></span><p>Genre 2</p></label>
+            <div class="twelve columns results-questions">
+
+                <div class="box-header">
+                    <h2>Previous Questions</h2>
+                </div>
+
+                <div class="row q-row margin-top-q">
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 1</h3>
+
+                        </div>
+
+                        <span class="q-icon red"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 2</h3>
+
+                        </div>
+
+                        <span class="q-icon green"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 3</h3>
+
+                        </div>
+
+                        <span class="q-icon blue"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="row q-row">
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 4</h3>
+
+                        </div>
+
+                        <span class="q-icon yellow"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 5</h3>
+
+                        </div>
+
+                        <span class="q-icon purple"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 6</h3>
+
+                        </div>
+
+                        <span class="q-icon pink"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row q-row">
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 7</h3>
+
+                        </div>
+
+                        <span class="q-icon orange"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 8</h3>
+
+                        </div>
+
+                        <span class="q-icon cyan"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 9</h3>
+
+                        </div>
+
+                        <span class="q-icon blue"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="row q-row">
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 10</h3>
+
+                        </div>
+
+                        <span class="q-icon red"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 11</h3>
+
+                        </div>
+
+                        <span class="q-icon orange"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 12</h3>
+
+                        </div>
+
+                        <span class="q-icon green"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="row q-row">
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 13</h3>
+
+                        </div>
+
+                        <span class="q-icon cyan"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 14</h3>
+
+                        </div>
+
+                        <span class="q-icon purple"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="four columns question-block">
+
+                        <div class="q-header">
+
+                            <h3>Question 15</h3>
+
+                        </div>
+
+                        <span class="q-icon blue"></span>
+
+                        <div class="q-question">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad aliquid, odio assumenda quibusdam ullam nisi numquam maxime iure optio.</p>
+
+                        </div>
+
+                        <ul class="q-answers">
+
+                            <li>Answer 1<span></span></li>
+                            <li>Answer 2<span></span></li>
+                            <li>Answer 3<span></span></li>
+                            <li>Answer 4<span></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
 
         </div>
 
-        <div class="button-row">
-
-            <label id="genre-label5" for="genre-5" for="radio1" class="button purple"><span></span><p>Genre 1</p></label>
-            <label id="genre-label6" for="genre-6" class="button yellow"><span></span><p>Genre 2</p></label>
-
         </div>
-
-        <div class="button-row">
-
-            <label id="genre-label7" for="genre-7" class="button cyan"><span></span><p>Genre 5</p></label>
-            <label id="genre-label8" for="genre-8" class="button pink"><span></span><p>Genre 6</p></label>
-
-        </div>
-
-    </article>
 
     </div>
-
-    <div id="quiz-container">
-
-    <article id="quiz">
-
-        
-
-    </article>
-
-    </div> -->
 
     <footer>
 

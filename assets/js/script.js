@@ -18,6 +18,7 @@ var genre = "17";
 var level = "easy";
 var count = 0;
 var nxtCount = 0;
+var totalScore = 0;
 
 var genres = ["11","10","17","23", "12", "21", "14", "22"];
 var tempQuizAnswers = [];
@@ -148,14 +149,12 @@ sticky2.addEventListener("click", function(event){
     storeJSONData();
     appendQuestion();
     timeBarCount()
-    
 });
 sticky3.addEventListener("click", function(event){
     event.preventDefault;
     storeJSONData();
     appendQuestion();
     timeBarCount()
-    
 });
 
 //Clicking on first answer option
@@ -193,9 +192,7 @@ rdbAnswer3.addEventListener("click", function(event){
     clearTimer();
     timeBarCount();
     if (nxtCount >= 0 && nxtCount <= 15) {
-
         storeJSONData()
-
         }
 });
 //Clicking on fourth answer option
@@ -206,9 +203,7 @@ rdbAnswer4.addEventListener("click", function(event){
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount+1;
     if (nxtCount >= 0 && nxtCount <= 15) {
-
         storeJSONData()
-
         }
 });
 
@@ -217,6 +212,8 @@ function userAnswerCheck(expected, actual){
     console.log("expected.value: "+expected);
     console.log("actual "+actual);
     if (expected==actual){
+        totalScore = totalScore+10;
+        console.log ("Total score: "+totalScore);
         console.log("right answer");
     }
 }
@@ -446,4 +443,3 @@ function clearTimer(){
     clearInterval(startTimer);
     divTimeLeft.style.width = "0px";
 }
-
