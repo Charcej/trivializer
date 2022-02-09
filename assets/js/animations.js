@@ -121,6 +121,11 @@ var link4 = headerUL.find('li:nth-child(4)');
 
 link3.on('click', function(){
 
+    callDashboardPage();
+
+});
+
+function callDashboardPage(){
     var page1 = document.getElementById('page-1');
     var page2 = document.getElementById('page-2');
     var page3 = document.getElementById('page-dashboard');
@@ -140,8 +145,7 @@ link3.on('click', function(){
         fontColor:"rgb(255, 255, 255)",
         maxValue : 100,
     });
-
-});
+}
 
 
 // On Click Label animations
