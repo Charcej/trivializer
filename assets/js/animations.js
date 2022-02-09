@@ -141,6 +141,35 @@ var link2 = headerUL.find('li:nth-child(2)');
 var link3 = headerUL.find('li:nth-child(3)');
 var link4 = headerUL.find('li:nth-child(4)');
 
+var page1 = document.getElementById('page-1');
+var page2 = document.getElementById('page-2');
+var page3 = document.getElementById('page-dashboard');
+var page4 = document.getElementById('page-about');
+
+link1.on('click', function(){
+
+    page1.style.display = "block";
+
+    page2.style.display = "none";
+
+    page3.style.display = "none";
+
+    page4.style.display = "none";
+
+});
+
+link2.on('click', function(){
+
+    page1.style.display = "none";
+
+    page2.style.display = "none";
+
+    page3.style.display = "none";
+
+    page4.style.display = "block";
+
+});
+
 link3.on('click', function(){
 
     callDashboardPage();
@@ -148,9 +177,6 @@ link3.on('click', function(){
 });
 
 function callDashboardPage(){
-    var page1 = document.getElementById('page-1');
-    var page2 = document.getElementById('page-2');
-    var page3 = document.getElementById('page-dashboard');
 
     page1.style.display = "none";
 

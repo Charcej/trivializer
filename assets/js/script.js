@@ -282,6 +282,11 @@ function storeJSONData() {
         var answer3 = $(quesProperty[nxtCount]).parent().parent().find('.a3');
         var answer4 = $(quesProperty[nxtCount]).parent().parent().find('.a4');
 
+        var qHeader = $('#quiz').find('.header');
+        var qHeadText = qHeader.find('h2');
+
+        addOne = nxtCount +1;
+
     for (var i = 0; i < 4; i++) {
         tempQuizAnswers = [jsonData.results[nxtCount].incorrect_answers[0], jsonData.results[nxtCount].incorrect_answers[1], jsonData.results[nxtCount].incorrect_answers[2], jsonData.results[nxtCount].correct_answer]
 
@@ -293,6 +298,9 @@ function storeJSONData() {
         tempQuizAnswers[r] = random;
 
     }
+
+    qHeadText.text('Question' + ' ' + addOne );
+
     lblAnswer1.innerHTML = tempQuizAnswers[0];
     lblAnswer2.innerHTML = tempQuizAnswers[1];
     lblAnswer3.innerHTML = tempQuizAnswers[2];
@@ -332,8 +340,48 @@ function storeJSONData() {
 
 }
 
+function countdown() {
+
+    var timeInterval;
+
+    var timeLeft = 9;
+
+    var timerID = $('#timer').find('h2');
+
+    timeInterval = setInterval(function () {
+        if (timeLeft > 0) {
+            timerID.text(timeLeft);
+            timeLeft--;
+
+        } else {
+            timerID.text('10');
+            if (nxtCount == 14) {
+                dashboardPage();
+            }
+            nxtCount = nxtCount + 1;
+            clearInterval(timeInterval);
+            clearTimer();
+            storeJSONData()
+            timeBarCount();
+            
+            
+
+            // alert("Your time is up!");
+        }
+
+        console.log(timeLeft);
+
+    }, 1000);
+
+    console.log(timerID);
+
+}
+
 //Handling the time bar in the quiz page
 function timeBarCount() {
+
+     countdown();
+
     startTimer = setInterval(barCount, 20);
     function barCount() {
         if (divTimeLeft.clientWidth < divCountdownBar.clientWidth) {
