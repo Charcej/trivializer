@@ -456,22 +456,26 @@ footer ul li:hover {
 
 #quiz {
     height: 500px;
-    background: #fff;
+    background: #141414;
     border-radius: 10px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px solid #555;
+    opacity: 0.9;
 }
 
 .quiz-buttons {
     position: absolute;
     bottom: 0;
+    margin-bottom: 20px;
 }
 
 .quiz-buttons label {
     color: #fff;
+    margin: 10px 40px;
 }
 
 #quiz input {
@@ -491,24 +495,38 @@ footer ul li:hover {
     top: 15px;
     width: 200px;
     height: 50px;
-    background: red;
     border-radius: 5px;
+}
+
+#quiz .header h2 {
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 #quiz .time {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 30px;
+    top: 30px;
     width: 80px;
     height: 50px;
-    background: red;
     border-radius: 5px;
+    text-align: right;
+}
+
+#quiz .time h2 {
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 20px;
+    letter-spacing: 1px;
 }
 
 #quiz p {
     position: relative;
     font-size: 20px;
     font-weight: 500;
+    color: #fff;
     top: -100px;
     margin: 0 50px;
 }
@@ -527,6 +545,7 @@ footer ul li:hover {
     background: lightgray;
     height: 10px;
 }
+
 /* DASHBOARD PAGE */
 
 #page-dashboard {
