@@ -2,6 +2,28 @@ $(document).ready(function() {
 
 // Sticky Hover Animations
 
+var guidePointer = new TimelineMax({repeat:-1});
+
+var guideSpan1 = $('#guide-buttons').find('.red');
+var guideSpan2 = $('#guide-sticky').find('.green');
+
+guidePointer
+.to($('#pointer'), 0, { opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1.4, { y: 110, x: -35, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan1, 0.4, { delay: 1.4, opacity: 0.7, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 1.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan1, 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1.2, { delay: 2.2, y: -130, x: 90, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan2, 0.4, { delay: 3.4, width: 70, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 3.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 3.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan2, 1, { delay: 5, width: 40, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1, { delay: 5, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1, { delay: 6, x:0, y:0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0);
+
+
     $('#sticky-1').hover(over,out);
 
         function over(){

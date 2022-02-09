@@ -280,7 +280,9 @@ footer ul li:hover {
 
 /* Article ID's */
 
-#guide-2 {
+/* Guide Content */
+
+#guide {
     height: 600px;
     background: #141414;
     /* filter: blur(1px); */
@@ -288,6 +290,66 @@ footer ul li:hover {
     box-shadow: var(--bshadow);
     border: 1px solid #bbb;
     opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+#guide #phone {
+    height: 600px;
+}
+
+#guide #pointer {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+#guide-buttons {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    top: 370px;
+    flex-direction: column;
+}
+
+#guide-buttons div {
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#guide-buttons div span {
+    width: 90px;
+    height: 24px;
+    border-radius: 3px;
+}
+
+#guide-sticky {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 90px;
+    left: 335px;
+    top: 120px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#guide-sticky span {
+    height: 24px;
+    width: 40px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #selection input {
