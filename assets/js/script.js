@@ -11,6 +11,7 @@ var rdbAnswer1 = document.getElementById("answer-1");
 var rdbAnswer2 = document.getElementById("answer-2");
 var rdbAnswer3 = document.getElementById("answer-3");
 var rdbAnswer4 = document.getElementById("answer-4");
+
 var quizCorrectAnswer = "";
 let storingQuizData;
 let jsonData;
@@ -179,20 +180,62 @@ function quizQuestions() {
 
 //display the questions and answer options to the front end from JSON object
 function storeJSONData() {
+    var quesProperty = ["#q1", "#q2", "#q3", "#q4", "#q5", "#q6", "#q7", "#q8", "#q9", "#q10", "#q11", "#q12", "#q13", "#q14", "#q15"]
     question.innerHTML = jsonData.results[nxtCount].question;
+
+        var answer1 = $(quesProperty[nxtCount]).parent().parent().find('.a1');
+        var answer2 = $(quesProperty[nxtCount]).parent().parent().find('.a2');
+        var answer3 = $(quesProperty[nxtCount]).parent().parent().find('.a3');
+        var answer4 = $(quesProperty[nxtCount]).parent().parent().find('.a4');
+
     for (var i = 0; i < 4; i++) {
         tempQuizAnswers = [jsonData.results[nxtCount].incorrect_answers[0], jsonData.results[nxtCount].incorrect_answers[1], jsonData.results[nxtCount].incorrect_answers[2], jsonData.results[nxtCount].correct_answer]
+
 
         //Randomizing the answer options
         var r = Math.floor(Math.random() * (i + 1));
         var random = tempQuizAnswers[i];
         tempQuizAnswers[i] = tempQuizAnswers[r];
         tempQuizAnswers[r] = random;
+
     }
     lblAnswer1.innerHTML = tempQuizAnswers[0];
     lblAnswer2.innerHTML = tempQuizAnswers[1];
     lblAnswer3.innerHTML = tempQuizAnswers[2];
     lblAnswer4.innerHTML = tempQuizAnswers[3];
+
+    if (tempQuizAnswers[0] === jsonData.results[nxtCount].correct_answer){
+
+        answer1.html(tempQuizAnswers[0] + '<span class="green"></span>');
+
+    } else {
+        answer1.html(tempQuizAnswers[0] + '<span></span>');
+    }
+
+    if (tempQuizAnswers[1] === jsonData.results[nxtCount].correct_answer){
+
+        answer2.html(tempQuizAnswers[1] + '<span class="green"></span>');
+
+    } else {
+        answer2.html(tempQuizAnswers[1] + '<span></span>');
+    }
+
+    if (tempQuizAnswers[2] === jsonData.results[nxtCount].correct_answer){
+
+        answer3.html(tempQuizAnswers[2] + '<span class="green"></span>');
+
+    } else {
+        answer3.html(tempQuizAnswers[2] + '<span></span>');
+    }
+
+    if (tempQuizAnswers[3] === jsonData.results[nxtCount].correct_answer){
+
+        answer4.html(tempQuizAnswers[3] + '<span class="green"></span>');
+
+    } else {
+        answer4.html(tempQuizAnswers[3] + '<span></span>');
+    }
+
 }
 
 //Handling the time bar in the quiz page

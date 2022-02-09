@@ -46,7 +46,7 @@
 }
 
 .green{
-    background: var(--green);
+    background: var(--green)!important;
 }
 
 .orange{
@@ -298,6 +298,7 @@ footer ul li:hover {
 
 #guide #phone {
     height: 600px;
+    z-index: 2;
 }
 
 #guide #pointer {
@@ -316,6 +317,7 @@ footer ul li:hover {
     display: flex;
     top: 370px;
     flex-direction: column;
+    opacity: 0.9;
 }
 
 #guide-buttons div {
@@ -338,11 +340,12 @@ footer ul li:hover {
     display: flex;
     width: 40px;
     height: 90px;
-    left: 335px;
+    left: 341px;
     top: 120px;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: flex-end;
+    opacity: 0.9;
 }
 
 #guide-sticky span {
@@ -594,7 +597,6 @@ footer ul li:hover {
 }
 #divCountdownBar{
     position: absolute;
-    left: 200px;
     width: 500px;
     height: 10px;
     top: 200px;

@@ -15,7 +15,7 @@ guidePointer
 .to($('#pointer'), 0.4, { delay: 1.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
 .to(guideSpan1, 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
 .to($('#pointer'), 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
-.to($('#pointer'), 1.2, { delay: 2.2, y: -130, x: 90, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1.2, { delay: 2.2, y: -135, x: 90, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
 .to(guideSpan2, 0.4, { delay: 3.4, width: 70, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
 .to($('#pointer'), 0.4, { delay: 3.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
 .to($('#pointer'), 0.4, { delay: 3.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
