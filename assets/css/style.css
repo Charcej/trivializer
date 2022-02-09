@@ -876,3 +876,37 @@ footer ul li:hover {
     border-radius: 5px;
     background: #fff;
 }
+
+.about-test {
+    color: #fff;
+    background: #141414;
+    opacity: 0.9;
+    padding: 40px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    position: relative;
+}
+
+.about-test p {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.about-test .page-header {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+}
+
+.page-header h2 {
+    font-family: 'Safety';
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#page-about {
+    display: none;
+}
