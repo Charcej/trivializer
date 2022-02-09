@@ -158,6 +158,12 @@ function callDashboardPage(){
 
     page3.style.display = "block";
 
+    console.log(totalScore);
+
+    circleNumber = (totalScore / 15) * 100;
+
+    circleValue = Math.round(circleNumber);
+
     new Circlebar({
         element : "#progressBar",
         type : "progress",
@@ -165,7 +171,7 @@ function callDashboardPage(){
         dialWidth: 18,
         fontSize:"24px",
         fontColor:"rgb(255, 255, 255)",
-        maxValue : 100,
+        maxValue : circleValue,
     });
 }
 

@@ -189,10 +189,10 @@ function storeJSONData() {
         tempQuizAnswers[i] = tempQuizAnswers[r];
         tempQuizAnswers[r] = random;
     }
-    lblAnswer1.textContent = tempQuizAnswers[0];
-    lblAnswer2.textContent = tempQuizAnswers[1];
-    lblAnswer3.textContent = tempQuizAnswers[2];
-    lblAnswer4.textContent = tempQuizAnswers[3];
+    lblAnswer1.innerHTML = tempQuizAnswers[0];
+    lblAnswer2.innerHTML = tempQuizAnswers[1];
+    lblAnswer3.innerHTML = tempQuizAnswers[2];
+    lblAnswer4.innerHTML = tempQuizAnswers[3];
 }
 
 //Handling the time bar in the quiz page
@@ -221,7 +221,7 @@ function dashboardPage() {
     $("#score-final").text(totalScore);
     var quesProperty = ["#q1", "#q2", "#q3", "#q4", "#q5", "#q6", "#q7", "#q8", "#q9", "#q10", "#q11", "#q12", "#q13", "#q14", "#q15"]
     for (var i = 0; i < 15; i++)
-        $(quesProperty[i]).text(JSON.parse(localStorage.getItem(questionsLocalStorage[i])));
+        $(quesProperty[i]).html(JSON.parse(localStorage.getItem(questionsLocalStorage[i])));
 }
 
 
