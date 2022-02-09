@@ -2,6 +2,28 @@ $(document).ready(function() {
 
 // Sticky Hover Animations
 
+var guidePointer = new TimelineMax({repeat:-1});
+
+var guideSpan1 = $('#guide-buttons').find('.red');
+var guideSpan2 = $('#guide-sticky').find('.green');
+
+guidePointer
+.to($('#pointer'), 0, { opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1.4, { y: 110, x: -35, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan1, 0.4, { delay: 1.4, opacity: 0.7, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 1.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan1, 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 1.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1.2, { delay: 2.2, y: -135, x: 90, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan2, 0.4, { delay: 3.4, width: 70, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 3.4, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 0.4, { delay: 3.8, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to(guideSpan2, 1, { delay: 5, width: 40, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1, { delay: 5, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
+.to($('#pointer'), 1, { delay: 6, x:0, y:0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0);
+
+
     $('#sticky-1').hover(over,out);
 
         function over(){
@@ -121,6 +143,11 @@ var link4 = headerUL.find('li:nth-child(4)');
 
 link3.on('click', function(){
 
+    callDashboardPage();
+
+});
+
+function callDashboardPage(){
     var page1 = document.getElementById('page-1');
     var page2 = document.getElementById('page-2');
     var page3 = document.getElementById('page-dashboard');
@@ -131,6 +158,12 @@ link3.on('click', function(){
 
     page3.style.display = "block";
 
+    console.log(totalScore);
+
+    circleNumber = (totalScore / 15) * 100;
+
+    circleValue = Math.round(circleNumber);
+
     new Circlebar({
         element : "#progressBar",
         type : "progress",
@@ -138,13 +171,21 @@ link3.on('click', function(){
         dialWidth: 18,
         fontSize:"24px",
         fontColor:"rgb(255, 255, 255)",
-        maxValue : 100,
+        maxValue : circleValue,
     });
-
-});
+}
 
 
 // On Click Label animations
+
+var label1click = 0;
+var label2click = 0;
+var label3click = 0;
+var label4click = 0;
+var label5click = 0;
+var label6click = 0;
+var label7click = 0;
+var label8click = 0;
 
 $('#genre-label1').on('click', function(){
 
@@ -156,10 +197,33 @@ $('#genre-label1').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label1click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label1click--;
+        return label1click;
+
+    }
+
+    if (label1click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label1click++;
+
+    return label1click;
+
+    }
 
 });
 
@@ -173,10 +237,33 @@ $('#genre-label2').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label2click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label2click--;
+        return label2click;
+
+    }
+
+    if (label2click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label2click++;
+
+    return label2click;
+
+    }
 
 });
 
@@ -190,10 +277,33 @@ $('#genre-label3').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label3click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label3click--;
+        return label3click;
+
+    }
+
+    if (label3click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label3click++;
+
+    return label3click;
+
+    }
 
 });
 
@@ -207,10 +317,33 @@ $('#genre-label4').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label4click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label4click--;
+        return label4click;
+
+    }
+
+    if (label4click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label4click++;
+
+    return label4click;
+
+    }
 
 });
 
@@ -224,10 +357,33 @@ $('#genre-label5').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label5click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label5click--;
+        return label5click;
+
+    }
+
+    if (label5click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label5click++;
+
+    return label5click;
+
+    }
 
 });
 
@@ -241,10 +397,33 @@ $('#genre-label6').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label6click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label6click--;
+        return label6click;
+
+    }
+
+    if (label6click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label6click++;
+
+    return label6click;
+
+    }
 
 });
 
@@ -258,10 +437,33 @@ $('#genre-label7').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label7click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label7click--;
+        return label7click;
+
+    }
+
+    if (label7click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label7click++;
+
+    return label7click;
+
+    }
 
 });
 
@@ -275,9 +477,32 @@ $('#genre-label8').on('click', function(){
     var leftCheck = div.find('.left-check');
     var rightCheck = div.find('.right-check');
 
+    var allLeft = $('.left-check');
+    var allRight = $('.right-check');
+
+    if (label8click == 1) {
+
+        TweenMax.to(leftCheck, 0, { display: "none" });
+        TweenMax.to(rightCheck, 0, { display: "none" });
+
+        label8click--;
+        return label8click;
+
+    }
+
+    if (label8click == 0){
+
+    TweenMax.to(allLeft, 0, { display: "none" });
+    TweenMax.to(allRight, 0, { display: "none" });
     TweenMax.to(leftCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label8click++;
+
+    return label8click;
+
+    }
 
 });

@@ -38,35 +38,35 @@
 }
 
 .red{
-    background: var(--red);
+    background: var(--red)!important;
 }
 
 .blue{
-    background: var(--blue);
+    background: var(--blue)!important;
 }
 
 .green{
-    background: var(--green);
+    background: var(--green)!important;
 }
 
 .orange{
-    background: var(--orange);
+    background: var(--orange)!important;
 }
 
 .purple{
-    background: var(--purple);
+    background: var(--purple)!important;
 }
 
 .yellow{
-    background: var(--yellow);
+    background: var(--yellow)!important;
 }
 
 .cyan{
-    background: var(--cyan);
+    background: var(--cyan)!important;
 }
 
 .pink{
-    background: var(--pink);
+    background: var(--pink)!important;
 }
 
 /* -- Body -- */
@@ -280,7 +280,9 @@ footer ul li:hover {
 
 /* Article ID's */
 
-#guide-2 {
+/* Guide Content */
+
+#guide {
     height: 600px;
     background: #141414;
     /* filter: blur(1px); */
@@ -288,6 +290,69 @@ footer ul li:hover {
     box-shadow: var(--bshadow);
     border: 1px solid #bbb;
     opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+#guide #phone {
+    height: 600px;
+    z-index: 2;
+}
+
+#guide #pointer {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+#guide-buttons {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    top: 370px;
+    flex-direction: column;
+    opacity: 0.9;
+}
+
+#guide-buttons div {
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#guide-buttons div span {
+    width: 90px;
+    height: 24px;
+    border-radius: 3px;
+}
+
+#guide-sticky {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 90px;
+    left: 341px;
+    top: 120px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0.9;
+}
+
+#guide-sticky span {
+    height: 24px;
+    width: 40px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #selection input {
@@ -456,22 +521,26 @@ footer ul li:hover {
 
 #quiz {
     height: 500px;
-    background: #fff;
+    background: #141414;
     border-radius: 10px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px solid #555;
+    opacity: 0.9;
 }
 
 .quiz-buttons {
     position: absolute;
     bottom: 0;
+    margin-bottom: 20px;
 }
 
 .quiz-buttons label {
     color: #fff;
+    margin: 10px 40px;
 }
 
 #quiz input {
@@ -491,31 +560,44 @@ footer ul li:hover {
     top: 15px;
     width: 200px;
     height: 50px;
-    background: red;
     border-radius: 5px;
+}
+
+#quiz .header h2 {
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 #quiz .time {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 30px;
+    top: 30px;
     width: 80px;
     height: 50px;
-    background: red;
     border-radius: 5px;
+    text-align: right;
+}
+
+#quiz .time h2 {
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 20px;
+    letter-spacing: 1px;
 }
 
 #quiz p {
     position: relative;
     font-size: 20px;
     font-weight: 500;
+    color: #fff;
     top: -100px;
     margin: 0 50px;
 }
 
 #divCountdownBar{
     position: absolute;
-    left: 200px;
     width: 500px;
     height: 10px;
     top: 200px;
@@ -622,6 +704,7 @@ footer ul li:hover {
     right: 0;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 #genre-icons span {
@@ -725,7 +808,7 @@ footer ul li:hover {
 
 .q-header h3 {
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Safety';
     letter-spacing: 1px;
 }
@@ -766,13 +849,23 @@ footer ul li:hover {
 }
 
 .q-answers li {
-    height: 20px!important;
+    height: 22px!important;
     font-size: 14px;
     margin-left: 20px;
     color: #fff;
     position: relative;
     display: flex;
     align-items: center;
+}
+
+.q-answers li p {
+    max-width: 24ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 18px;
+    height: 18px;
 }
 
 .q-answers li span {
