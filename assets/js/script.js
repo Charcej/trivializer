@@ -1,4 +1,4 @@
-//Declaring or Initilializing the variables
+//Declaring or Initilializing the variables (JS)
 var sticky1 = document.getElementById("sticky-1");
 var sticky2 = document.getElementById("sticky-2");
 var sticky3 = document.getElementById("sticky-3");
@@ -11,6 +11,9 @@ var rdbAnswer1 = document.getElementById("answer-1");
 var rdbAnswer2 = document.getElementById("answer-2");
 var rdbAnswer3 = document.getElementById("answer-3");
 var rdbAnswer4 = document.getElementById("answer-4");
+
+//Declaring or Initilializing the variables (JQ)
+var qColor = $('.q-icon');
 
 var quizCorrectAnswer = "";
 let storingQuizData;
@@ -36,46 +39,137 @@ var dasbQuestion
 $('#genre-label1').on('click', function () {
 
     genre = "11";
+
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('red');
+    $('#genre-icons').html('<span class="red"><i class="fas fa-film"></i></span>');
+
 });
 
 $('#genre-label2').on('click', function () {
 
     genre = "17";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('green');
+    $('#genre-icons').html('<span class="green"><i class="fas fa-atom"></i></span>');
+
 });
 
 $('#genre-label3').on('click', function () {
 
     genre = "23";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('blue');
+    $('#genre-icons').html('<span class="blue"><i class="fas fa-history"></i></span>');
 
 });
 
 $('#genre-label4').on('click', function () {
 
     genre = "21";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+    
+    qColor.addClass('orange');
+    $('#genre-icons').html('<span class="orange"><i class="fas fa-baseball-ball"></i></span>');
 
 });
 
 $('#genre-label5').on('click', function () {
 
     genre = "12";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('purple');
+    $('#genre-icons').html('<span class="purple"><i class="fas fa-music"></i></span>');
 
 });
 
 $('#genre-label6').on('click', function () {
 
     genre = "14";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('yellow');
+    $('#genre-icons').html('<span class="yellow"><i class="fas fa-tv"></i></span>');
 
 });
 
 $('#genre-label7').on('click', function () {
 
     genre = "10";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+
+    qColor.addClass('cyan');
+    $('#genre-icons').html('<span class="cyan"><i class="fas fa-book"></i></span>');
 
 });
 
 $('#genre-label8').on('click', function () {
 
     genre = "22";
+    qColor.removeClass('red');
+    qColor.removeClass('green'); 
+    qColor.removeClass('blue');
+    qColor.removeClass('orange');
+    qColor.removeClass('purple');
+    qColor.removeClass('yellow');
+    qColor.removeClass('cyan');
+    qColor.removeClass('pink');
+    
+    qColor.addClass('pink');
+    $('#genre-icons').html('<span class="pink"><i class="fas fa-globe"></i></span>');
 
 });
 
@@ -206,34 +300,34 @@ function storeJSONData() {
 
     if (tempQuizAnswers[0] === jsonData.results[nxtCount].correct_answer){
 
-        answer1.html(tempQuizAnswers[0] + '<span class="green"></span>');
+        answer1.html("<p>" + tempQuizAnswers[0] + "</p>" + '<span class="green"></span>');
 
     } else {
-        answer1.html(tempQuizAnswers[0] + '<span></span>');
+        answer1.html("<p>" + tempQuizAnswers[0] + "</p>" + '<span></span>');
     }
 
     if (tempQuizAnswers[1] === jsonData.results[nxtCount].correct_answer){
 
-        answer2.html(tempQuizAnswers[1] + '<span class="green"></span>');
+        answer2.html("<p>" + tempQuizAnswers[1] + "</p>" + '<span class="green"></span>');
 
     } else {
-        answer2.html(tempQuizAnswers[1] + '<span></span>');
+        answer2.html("<p>" + tempQuizAnswers[1] + "</p>" + '<span></span>');
     }
 
     if (tempQuizAnswers[2] === jsonData.results[nxtCount].correct_answer){
 
-        answer3.html(tempQuizAnswers[2] + '<span class="green"></span>');
+        answer3.html("<p>" + tempQuizAnswers[2] + "</p>" + '<span class="green"></span>');
 
     } else {
-        answer3.html(tempQuizAnswers[2] + '<span></span>');
+        answer3.html("<p>" + tempQuizAnswers[2] + "</p>" + '<span></span>');
     }
 
     if (tempQuizAnswers[3] === jsonData.results[nxtCount].correct_answer){
 
-        answer4.html(tempQuizAnswers[3] + '<span class="green"></span>');
+        answer4.html("<p>" + tempQuizAnswers[3] + "</p>" + '<span class="green"></span>');
 
     } else {
-        answer4.html(tempQuizAnswers[3] + '<span></span>');
+        answer4.html("<p>" + tempQuizAnswers[3] + "</p>" + '<span></span>');
     }
 
 }

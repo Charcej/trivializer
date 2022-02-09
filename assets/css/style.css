@@ -38,11 +38,11 @@
 }
 
 .red{
-    background: var(--red);
+    background: var(--red)!important;
 }
 
 .blue{
-    background: var(--blue);
+    background: var(--blue)!important;
 }
 
 .green{
@@ -50,23 +50,23 @@
 }
 
 .orange{
-    background: var(--orange);
+    background: var(--orange)!important;
 }
 
 .purple{
-    background: var(--purple);
+    background: var(--purple)!important;
 }
 
 .yellow{
-    background: var(--yellow);
+    background: var(--yellow)!important;
 }
 
 .cyan{
-    background: var(--cyan);
+    background: var(--cyan)!important;
 }
 
 .pink{
-    background: var(--pink);
+    background: var(--pink)!important;
 }
 
 /* -- Body -- */
@@ -703,6 +703,7 @@ footer ul li:hover {
     right: 0;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 #genre-icons span {
@@ -806,7 +807,7 @@ footer ul li:hover {
 
 .q-header h3 {
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Safety';
     letter-spacing: 1px;
 }
@@ -847,13 +848,23 @@ footer ul li:hover {
 }
 
 .q-answers li {
-    height: 20px!important;
+    height: 22px!important;
     font-size: 14px;
     margin-left: 20px;
     color: #fff;
     position: relative;
     display: flex;
     align-items: center;
+}
+
+.q-answers li p {
+    max-width: 24ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 18px;
+    height: 18px;
 }
 
 .q-answers li span {
