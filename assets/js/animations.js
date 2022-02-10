@@ -1,11 +1,17 @@
-$(document).ready(function() {
-
 // Sticky Hover Animations
 
 var guidePointer = new TimelineMax({repeat:-1});
 
 var guideSpan1 = $('#guide-buttons').find('.red');
 var guideSpan2 = $('#guide-sticky').find('.green');
+
+var sticky = document.getElementById('stick-buttons');
+var page1 = document.getElementById('page-1');
+var page2 = document.getElementById('page-2');
+var page3 = document.getElementById('page-dashboard');
+var page4 = document.getElementById('page-about');
+var page5 = document.getElementById('page-contact');
+
 
 guidePointer
 .to($('#pointer'), 0, { opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
@@ -22,7 +28,6 @@ guidePointer
 .to(guideSpan2, 1, { delay: 5, width: 40, transformOrigin:"50% 100%", ease:Power1.easeInOut }, 0)
 .to($('#pointer'), 1, { delay: 5, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0)
 .to($('#pointer'), 1, { delay: 6, x:0, y:0, transformOrigin:"50% 50%", ease:Power1.easeInOut }, 0);
-
 
     $('#sticky-1').hover(over,out);
 
@@ -59,41 +64,79 @@ guidePointer
         
             TweenMax.to($(this), 0.3, { right: -175, transformOrigin:"50% 50%", ease:Power1.easeInOut });
         }
-    
-});
 
 // Sticky - Displays
 
 $('#sticky-1').on('click', function(){
 
-    var page1 = document.getElementById('page-1');
-    var page2 = document.getElementById('page-2');
+    sticky.style.display = "none";
 
     page1.style.display = "none";
 
     page2.style.display = "block";
+
+    page3.style.display = "none";
+
+    page4.style.display = "none";
+
+    page5.style.display = "none";
+
+    // $('#sticky-1').off();
+    // $('#sticky-2').off();
+    // $('#sticky-3').off();
+
+    // TweenMax.to($('#sticky-1'), 0.3, { right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-2'), 0.3, { delay: 0.3, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-3'), 0.3, { delay: 0.6, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+
 
 });
 
 $('#sticky-2').on('click', function(){
 
-    var page1 = document.getElementById('page-1');
-    var page2 = document.getElementById('page-2');
+    sticky.style.display = "none";
 
     page1.style.display = "none";
 
     page2.style.display = "block";
+
+    page3.style.display = "none";
+
+    page4.style.display = "none";
+
+    page5.style.display = "none";
+
+    // $('#sticky-1').off();
+    // $('#sticky-2').off();
+    // $('#sticky-3').off();
+
+    // TweenMax.to($('#sticky-1'), 0.3, { delay: 0.6, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-2'), 0.3, { right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-3'), 0.3, { delay: 0.3, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
 
 });
 
 $('#sticky-3').on('click', function(){
 
-    var page1 = document.getElementById('page-1');
-    var page2 = document.getElementById('page-2');
+    sticky.style.display = "none";
 
     page1.style.display = "none";
 
     page2.style.display = "block";
+
+    page3.style.display = "none";
+
+    page4.style.display = "none";
+
+    page5.style.display = "none";
+
+    // $('#sticky-1').off();
+    // $('#sticky-2').off();
+    // $('#sticky-3').off();
+
+    // TweenMax.to($('#sticky-1'), 0.3, { delay: 0.3, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-2'), 0.3, { delay: 0.6, right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-3'), 0.3, { right: -260, transformOrigin:"50% 50%", ease:Power1.easeInOut });
 
 });
 
@@ -141,12 +184,9 @@ var link2 = headerUL.find('li:nth-child(2)');
 var link3 = headerUL.find('li:nth-child(3)');
 var link4 = headerUL.find('li:nth-child(4)');
 
-var page1 = document.getElementById('page-1');
-var page2 = document.getElementById('page-2');
-var page3 = document.getElementById('page-dashboard');
-var page4 = document.getElementById('page-about');
-
 link1.on('click', function(){
+
+    sticky.style.display = "flex";
 
     page1.style.display = "block";
 
@@ -156,9 +196,21 @@ link1.on('click', function(){
 
     page4.style.display = "none";
 
+    page5.style.display = "none";
+
+    // $('#sticky-1').on();
+    // $('#sticky-2').on();
+    // $('#sticky-3').on();
+
+    // TweenMax.to($('#sticky-1'), 0.3, { right: -40, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-2'), 0.3, { delay: 0.3, right: -40, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+    // TweenMax.to($('#sticky-3'), 0.3, { delay: 0.6, right: -40, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+
 });
 
 link2.on('click', function(){
+
+    sticky.style.display = "none";
 
     page1.style.display = "none";
 
@@ -167,6 +219,8 @@ link2.on('click', function(){
     page3.style.display = "none";
 
     page4.style.display = "block";
+
+    page5.style.display = "none";
 
     var bar1 = $('.code-bar').find('.purple');
     var bar2 = $('.code-bar').find('.orange');
@@ -219,11 +273,17 @@ link3.on('click', function(){
 
 function callDashboardPage(){
 
+    sticky.style.display = "none";
+
     page1.style.display = "none";
 
     page2.style.display = "none";
 
     page3.style.display = "block";
+
+    page4.style.display = "none";
+
+    page5.style.display = "none";
 
     console.log(totalScore);
 
@@ -241,6 +301,22 @@ function callDashboardPage(){
         maxValue : circleValue,
     });
 }
+
+link4.on('click', function(){
+
+    sticky.style.display = "none";
+
+    page1.style.display = "none";
+
+    page2.style.display = "none";
+
+    page3.style.display = "none";
+
+    page4.style.display = "none";
+
+    page5.style.display = "block";
+
+});
 
 
 // On Click Label animations

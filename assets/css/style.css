@@ -434,9 +434,21 @@ footer ul li:hover {
     position: absolute;
     display: flex;
     right: 0;
-    top: 70px;
+    top: 124px;
     /* filter: blur(1px); */
     z-index: 2;
+}
+
+#stick-buttons .diff {
+    position: absolute;
+    color: #fff;
+    font-family: 'Safety';
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    top: -20px;
+    right: 40px;
 }
 
 #sticky-1 {
@@ -876,6 +888,8 @@ footer ul li:hover {
     background: #fff;
 }
 
+/* About Page */
+
 .about-test {
     color: #fff;
     background: #141414;
@@ -1006,4 +1020,104 @@ footer ul li:hover {
     font-family: 'Safety';
     margin-left: 15px;
     margin-top: 20px;
+}
+
+/* Contact Page */
+#page-contact {
+    display: none;
+}
+
+.contact-test {
+    color: #fff;
+    background: #141414;
+    opacity: 0.9;
+    padding: 30px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    position: relative;
+    height: auto;
+}
+
+.contact-image {
+    color: #fff;
+    background: #141414;
+    opacity: 0.9;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.contact-image img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: -4px;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    pointer-events: none;
+}
+
+.contact-column h3 {
+    letter-spacing: 1px;
+}
+
+.contact-column p {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0px 10px;
+    position: relative;
+    line-height: 18px;
+}
+
+.contact-icons {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.contact-icons span{
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.contact-icons span:hover {
+    cursor: pointer;
+    transition: 0.4s;
+    color: var(--red);
+}
+
+.contact-margin {
+    margin-top: 14px;
+}
+
+.e-mail {
+    height: 30px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Safety';
+    font-size: 12px!important;
+    letter-spacing: 1px;
+    pointer-events: none;;
+}
+
+.margin-bottom {
+    margin-bottom: 80px;
 }
