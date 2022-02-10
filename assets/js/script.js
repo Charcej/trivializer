@@ -31,6 +31,7 @@ var questionsLocalStorage = [];
 var divCountdownBar = document.getElementById("divCountdownBar");
 var divTimeLeft = document.getElementById("divTimeLeft");
 var startTimer;
+var timeLeft = 10;
 
 //variables for the dashboard page
 var dasbQuestion
@@ -178,27 +179,22 @@ sticky1.addEventListener("click", function (event) {
     event.preventDefault;
     complexity = "easy";
     quizQuestions();
-    timeBarCount();
-    // countdown();
 });
 sticky2.addEventListener("click", function (event) {
     event.preventDefault;
     complexity = "medium";
     quizQuestions();
-    timeBarCount();
-    // countdown();
 });
 sticky3.addEventListener("click", function (event) {
     event.preventDefault;
     complexity = "hard";
     quizQuestions();
-    timeBarCount();
-    // countdown();
 });
 
 //Clicking on first answer option
 rdbAnswer1.addEventListener("click", function (event) {
     event.preventDefault;
+    timeLeft = 10;
     if (nxtCount == 14) {
         dashboardPage();
     }
@@ -213,6 +209,7 @@ rdbAnswer1.addEventListener("click", function (event) {
 //Clicking on second answer option
 rdbAnswer2.addEventListener("click", function (event) {
     event.preventDefault;
+    timeLeft = 10;
     if (nxtCount == 14) {
         dashboardPage();
     }
@@ -227,6 +224,7 @@ rdbAnswer2.addEventListener("click", function (event) {
 //Clicking on third answer option
 rdbAnswer3.addEventListener("click", function (event) {
     event.preventDefault;
+    timeLeft = 10;
     if (nxtCount == 14) {
         dashboardPage();
     }
@@ -240,6 +238,7 @@ rdbAnswer3.addEventListener("click", function (event) {
 //Clicking on fourth answer option
 rdbAnswer4.addEventListener("click", function (event) {
     event.preventDefault;
+    timeLeft = 10;
     if (nxtCount == 14) {
         dashboardPage();
     }
@@ -276,6 +275,7 @@ function quizQuestions() {
                 localStorage.setItem(questionsLocalStorage[i], JSON.stringify(data.results[i].question));
             }
             storeJSONData();
+            timeBarCount();
         });
 }
 
@@ -349,19 +349,16 @@ function storeJSONData() {
 
 function countdown() {
 
-    var timeInterval;
-
-    var timeLeft = 9;
-
-    var timerID = $('#timer').find('h2');
+    console.log("Time left in countdown method: "+timeLeft);
+    timerID = $('#timer').find('h2');
 
     timeInterval = setInterval(function () {
-        if (timeLeft > 0) {
             timerID.text(timeLeft);
             timeLeft--;
-
-        } else {
-            timerID.text('10');
+        if (timeLeft==1){timerID.text('1')}
+        if (timeLeft<1){
+            timeLeft = 9;
+            timerID.text('0');
             if (nxtCount == 14) {
                 dashboardPage();
             }
@@ -370,9 +367,14 @@ function countdown() {
             clearTimer();
             storeJSONData()
             timeBarCount();
+            
         }
-        
+
+        console.log(timeLeft);
+
     }, 1000);
+
+    console.log(timerID);
 
 }
 
@@ -395,7 +397,9 @@ function timeBarCount() {
 
 //reset timer
 function clearTimer() {
+    timeLeft = 9;
     clearInterval(startTimer);
+    clearInterval(timeInterval);
     divTimeLeft.style.width = "0px";
 }
 
