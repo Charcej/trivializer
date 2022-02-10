@@ -168,6 +168,47 @@ link2.on('click', function(){
 
     page4.style.display = "block";
 
+    var bar1 = $('.code-bar').find('.purple');
+    var bar2 = $('.code-bar').find('.orange');
+    var bar3 = $('.code-bar').find('.yellow');
+
+    var per1 = bar1.parent().find('.code-per');
+    var per2 = bar2.parent().find('.code-per');
+    var per3 = bar3.parent().find('.code-per');
+
+    TweenMax.to(bar1, 0, { width: 0 });
+    TweenMax.to(bar2, 0, { width: 0 });
+    TweenMax.to(bar3, 0, { width: 0 });
+    TweenMax.to(bar1, 0.5, { width: 100, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+    TweenMax.to(bar2, 0.5, { delay: 0.4, width: 120, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+    TweenMax.to(bar3, 0.5, { delay: 0.8, width: 180, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    var target1 = 25;
+    var target2 = 30;
+    var target3 = 45;
+
+    var number1 = per1.text();
+    var number2 = per2.text();
+    var number3 = per3.text();
+    
+    var interval1 = setInterval(function() {
+        per1.text(number1 + ' %');
+        if (number1 >= target1) clearInterval(interval1);
+        number1++;
+    }, 20);
+
+    var interval2 = setInterval(function() {
+        per2.text(number2 + ' %');
+        if (number2 >= target2) clearInterval(interval2);
+        number2++;
+    }, 20);
+
+    var interval3 = setInterval(function() {
+        per3.text(number3 + ' %');
+        if (number3 >= target3) clearInterval(interval3);
+        number3++;
+    }, 20);
+
 });
 
 link3.on('click', function(){

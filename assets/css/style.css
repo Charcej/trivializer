@@ -880,7 +880,7 @@ footer ul li:hover {
     color: #fff;
     background: #141414;
     opacity: 0.9;
-    padding: 40px;
+    padding: 30px;
     border: 1px solid #bbb;
     border-radius: 10px;
     position: relative;
@@ -888,11 +888,12 @@ footer ul li:hover {
 
 .about-test p {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
+    line-height: 22px;
 }
 
-.about-test .page-header {
+.page-header {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -901,11 +902,108 @@ footer ul li:hover {
 
 .page-header h2 {
     font-family: 'Safety';
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: #fff;
+}
+
+.page-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: 10px;
+}
+
+.page-icon span {
+    font-size: 24px;
+    color: #fff;
+    display: flex;
 }
 
 #page-about {
     display: none;
+}
+
+#code-about{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.code-row {
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+}
+
+.code-row span {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+}
+
+.code-column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.code-bar {
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.code-bar .purple {
+    height: 15px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.code-bar .orange {
+    height: 15px;
+    width: 120px;
+    margin-left: 20px;
+}
+
+.code-bar .yellow {
+    height: 15px;
+    width: 180px;
+    margin-left: 20px;
+}
+
+.code-bar p {
+    height: 25px;
+    margin-left: 20px;
+    position: absolute;
+    top: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.code-bar .code-per {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    font-family: 'Safety';
+    margin-left: 15px;
+    margin-top: 20px;
 }
