@@ -222,8 +222,8 @@ link2.on('click', function(){
 
     page5.style.display = "none";
 
-    var bar1 = $('.code-bar').find('.purple');
-    var bar2 = $('.code-bar').find('.orange');
+    var bar1 = $('.code-bar').find('.orange');
+    var bar2 = $('.code-bar').find('.purple');
     var bar3 = $('.code-bar').find('.yellow');
 
     var per1 = bar1.parent().find('.code-per');
@@ -233,13 +233,13 @@ link2.on('click', function(){
     TweenMax.to(bar1, 0, { width: 0 });
     TweenMax.to(bar2, 0, { width: 0 });
     TweenMax.to(bar3, 0, { width: 0 });
-    TweenMax.to(bar1, 0.5, { width: 100, transformOrigin:"0% 50%", ease:Power1.easeInOut });
-    TweenMax.to(bar2, 0.5, { delay: 0.4, width: 120, transformOrigin:"0% 50%", ease:Power1.easeInOut });
-    TweenMax.to(bar3, 0.5, { delay: 0.8, width: 180, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+    TweenMax.to(bar1, 0.5, { width: 156, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+    TweenMax.to(bar2, 0.5, { delay: 0.4, width: 92, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+    TweenMax.to(bar3, 0.5, { delay: 0.8, width: 152, transformOrigin:"0% 50%", ease:Power1.easeInOut });
 
-    var target1 = 25;
-    var target2 = 30;
-    var target3 = 45;
+    var target1 = 39;
+    var target2 = 23;
+    var target3 = 38;
 
     var number1 = per1.text();
     var number2 = per2.text();
