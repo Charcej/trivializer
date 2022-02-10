@@ -179,18 +179,21 @@ sticky1.addEventListener("click", function (event) {
     complexity = "easy";
     quizQuestions();
     timeBarCount();
+    // countdown();
 });
 sticky2.addEventListener("click", function (event) {
     event.preventDefault;
     complexity = "medium";
     quizQuestions();
-    timeBarCount()
+    timeBarCount();
+    // countdown();
 });
 sticky3.addEventListener("click", function (event) {
     event.preventDefault;
     complexity = "hard";
     quizQuestions();
-    timeBarCount()
+    timeBarCount();
+    // countdown();
 });
 
 //Clicking on first answer option
@@ -204,6 +207,7 @@ rdbAnswer1.addEventListener("click", function (event) {
     clearTimer();
     storeJSONData()
     timeBarCount();
+    // countdown();
 });
 
 //Clicking on second answer option
@@ -217,6 +221,7 @@ rdbAnswer2.addEventListener("click", function (event) {
     clearTimer();
     storeJSONData()
     timeBarCount();
+    // countdown();
 });
 
 //Clicking on third answer option
@@ -230,6 +235,7 @@ rdbAnswer3.addEventListener("click", function (event) {
     clearTimer();
     storeJSONData()
     timeBarCount();
+    // countdown();
 });
 //Clicking on fourth answer option
 rdbAnswer4.addEventListener("click", function (event) {
@@ -240,6 +246,7 @@ rdbAnswer4.addEventListener("click", function (event) {
     clearTimer();
     storeJSONData()
     timeBarCount();
+    // countdown();
     userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
     nxtCount = nxtCount + 1;
 });
@@ -363,24 +370,16 @@ function countdown() {
             clearTimer();
             storeJSONData()
             timeBarCount();
-            
-            
-
-            // alert("Your time is up!");
         }
-
-        console.log(timeLeft);
-
+        
     }, 1000);
-
-    console.log(timerID);
 
 }
 
 //Handling the time bar in the quiz page
 function timeBarCount() {
 
-     countdown();
+    countdown();
 
     startTimer = setInterval(barCount, 20);
     function barCount() {
