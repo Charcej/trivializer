@@ -267,7 +267,17 @@ link2.on('click', function(){
 
 link3.on('click', function(){
 
-    callDashboardPage();
+    sticky.style.display = "none";
+
+    page1.style.display = "none";
+
+    page2.style.display = "none";
+
+    page3.style.display = "block";
+
+    page4.style.display = "none";
+
+    page5.style.display = "none";
 
 });
 
@@ -348,6 +358,8 @@ $('#genre-label1').on('click', function(){
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
 
+        genre = 0;
+
         label1click--;
         return label1click;
 
@@ -398,6 +410,8 @@ $('#genre-label2').on('click', function(){
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
 
+        genre = 0;
+
         label2click--;
         return label2click;
 
@@ -445,6 +459,8 @@ $('#genre-label3').on('click', function(){
 
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
+
+        genre = 0;
 
         label3click--;
         return label3click;
@@ -494,6 +510,8 @@ $('#genre-label4').on('click', function(){
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
 
+        genre = 0;
+
         label4click--;
         return label4click;
 
@@ -541,6 +559,8 @@ $('#genre-label5').on('click', function(){
 
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
+
+        genre = 0;
 
         label5click--;
         return label5click;
@@ -590,6 +610,8 @@ $('#genre-label6').on('click', function(){
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
 
+        genre = 0;
+
         label6click--;
         return label6click;
 
@@ -638,6 +660,8 @@ $('#genre-label7').on('click', function(){
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
 
+        genre = 0;
+
         label7click--;
         return label7click;
 
@@ -685,6 +709,8 @@ $('#genre-label8').on('click', function(){
 
         TweenMax.to(leftCheck, 0, { display: "none" });
         TweenMax.to(rightCheck, 0, { display: "none" });
+
+        genre = 0;
 
         label8click--;
         return label8click;
