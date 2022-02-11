@@ -278,55 +278,31 @@
                     </tr>
 
                     <tr id="score-1">
-                        <td>RL</td>
-                        <td>15/15</td>
-                        <td>
-                            
-                            <span class="red"></span>
-                            <span class="green"></span>
-                            <span class="blue"></span>
-                        
-                        </td>
-                        <td>MEDIUM</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                     <tr id="score-2">
-                        <td>CJ</td>
-                        <td>15/15</td>
-                        <td>
-
-                            <span class="red"></span>
-                            <span class="yellow"></span>
-                            <span class="pink"></span>
-
-                        </td>
-                        <td>HARD</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                     <tr id="score-3">
-                        <td>VJ</td>
-                        <td>15/15</td>
-                        <td>
-
-                            <span class="orange"></span>
-                            <span class="purple"></span>
-                            <span class="yellow"></span>
-
-                        </td>
-                        <td>EASY</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                     <tr id="score-4">
-                        <td>OLEG</td>
-                        <td>15/15</td>
-                        <td>
-
-                            <span class="green"></span>
-                            <span class="blue"></span>
-                            <span class="pink"></span>
-
-                        </td>
-                        <td>MEDIUM</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                 </table>
@@ -1175,7 +1151,7 @@
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-    import { getFirestore, doc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
+    import { getFirestore, doc, getDocs, collection, query, orderBy, limit, onSnapshot, addDoc, deleteDoc, where } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
     
     const firebaseConfig = {
@@ -1196,10 +1172,13 @@
     const db = getFirestore()
     
     const colRef = collection(db, 'score')
+
+    const q = query(colRef, orderBy('score', 'desc'))
     
-    getDocs(colRef)
+    getDocs(q)
         .then((snapshot) =>{
             // console.log(snapshot.docs)
+
             const score = []
             snapshot.docs.forEach((doc) =>{
                 score.push({ ...doc.data(), id: doc.id })
@@ -1212,7 +1191,7 @@
         })
     
         .catch(err => {
-            console.log(err.message)
+            // console.log(err.message)
         })
 
 </script>

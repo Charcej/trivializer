@@ -413,19 +413,85 @@ function dashboardPage() {
 }
 
 function loadScores(){
-    var name1 = $('#score-1').find('td:nth-child(1)');
-    var score1 = $('#score-1').find('td:nth-child(2)');
-    var genre1 = $('#score-1').find('td:nth-child(3)');
 
-    name1.text(window.data[0].name)
-    score1.text(window.data[0].score + '/15')
+    var highScores =[ $('#score-1'), $('score-2'), $('score-3'), $('score-4') ]
 
-    if (window.data[0].genre === "test-genre"){
+    for (var i = 0; i < highScores.length; i++ ){
 
-    genre1.html('<span class="red"></span>')
+        var name = $('#score-'+ [i+1]).find('td:nth-child(1)');
+        var score = $('#score-'+ [i+1]).find('td:nth-child(2)');
+        var genre = $('#score-'+ [i+1]).find('td:nth-child(3)');
+        var diff = $('#score-'+ [i+1]).find('td:nth-child(4)');
+
+        name.text(window.data[i].name)
+        score.text(window.data[i].score + '/15')
+
+        if (window.data[i].genre === "Movies"){
+
+        genre.html('<span class="red"></span>')
+
+        }
+
+        else{}
+
+        if (window.data[i].genre === "Science"){
+
+            genre.html('<span class="green"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "History"){
+
+            genre.html('<span class="blue"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "Sports"){
+
+            genre.html('<span class="orange"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "Music"){
+
+            genre.html('<span class="purple"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "Television"){
+
+            genre.html('<span class="yellow"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "Books"){
+
+            genre.html('<span class="cyan"></span>')
+    
+        }
+    
+        else{}
+
+        if (window.data[i].genre === "Geography"){
+
+            genre.html('<span class="pink"></span>')
+    
+        }
+    
+        else{}
+
+        diff.text(window.data[i].difficulty)
 
     }
-
-    else{}
 
 }

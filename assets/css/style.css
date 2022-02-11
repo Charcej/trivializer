@@ -743,6 +743,10 @@ footer ul li:hover {
 
 .high-score {
     color: #fff;
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    top: 45px;
 }
 
 .high-score table {
