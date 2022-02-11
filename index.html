@@ -1165,23 +1165,19 @@
 
         </ul> -->
 
-        <p>Copyright &copy; 2022 - TRIVIALIZER</p>
+        <p id="test">Copyright &copy; 2022 - TRIVIALIZER</p>
 
     </footer>
 
     </section>
     
 </body>
+
 <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
     import { getFirestore, doc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    
     const firebaseConfig = {
       apiKey: "AIzaSyBeAPSHjOmBOegzn_C51EYUgwzbT1FqFU8",
       authDomain: "high-score-a2006.firebaseapp.com",
@@ -1192,33 +1188,38 @@
       appId: "1:483787443801:web:6f7054297d845cd6686b48",
       measurementId: "G-T6MSQRQLN4"
     };
-  
+    
     // Initialize Firebase
     const app = initializeApp(firebaseConfig)
     const analytics = getAnalytics(app)
-
+    
     const db = getFirestore()
-
+    
     const colRef = collection(db, 'score')
-
+    
     getDocs(colRef)
         .then((snapshot) =>{
             // console.log(snapshot.docs)
-            let score = []
+            const score = []
             snapshot.docs.forEach((doc) =>{
                 score.push({ ...doc.data(), id: doc.id })
             })
-
+    
+            // document.getElementById('test').textContent = score[0].name;
+    
             console.log(score);
 
+            window.data = score;
+    
         })
-
+    
         .catch(err => {
             console.log(err.message)
         })
 
 </script>
-<script src="./assets/js/script.js"></script>
+
+<script type="text/javascript" src="./assets/js/script.js"></script>
 <script type="text/javascript" src="assets/js/animations.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -53,6 +53,8 @@ $('#genre-label1').on('click', function () {
     qColor.addClass('red');
     $('#genre-icons').html('<span class="red"><i class="fas fa-film"></i></span>');
 
+    console.log(window.data[0])
+
 });
 
 $('#genre-label2').on('click', function () {

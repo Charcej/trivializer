@@ -382,8 +382,6 @@ $('#genre-label1').on('click', function(){
     label7click = 0;
     label8click = 0;
 
-    console.log(label2click);
-
     label1click++;
 
     return label1click;
