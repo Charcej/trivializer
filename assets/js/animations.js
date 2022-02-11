@@ -362,6 +362,16 @@ $('#genre-label1').on('click', function(){
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
 
+    label2click = 0;
+    label3click = 0;
+    label4click = 0;
+    label5click = 0;
+    label6click = 0;
+    label7click = 0;
+    label8click = 0;
+
+    console.log(label2click);
+
     label1click++;
 
     return label1click;
@@ -401,6 +411,14 @@ $('#genre-label2').on('click', function(){
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label1click = 0;
+    label3click = 0;
+    label4click = 0;
+    label5click = 0;
+    label6click = 0;
+    label7click = 0;
+    label8click = 0;
 
     label2click++;
 
@@ -442,6 +460,14 @@ $('#genre-label3').on('click', function(){
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
 
+    label1click = 0;
+    label2click = 0;
+    label4click = 0;
+    label5click = 0;
+    label6click = 0;
+    label7click = 0;
+    label8click = 0;
+
     label3click++;
 
     return label3click;
@@ -481,6 +507,14 @@ $('#genre-label4').on('click', function(){
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label1click = 0;
+    label2click = 0;
+    label3click = 0;
+    label5click = 0;
+    label6click = 0;
+    label7click = 0;
+    label8click = 0;
 
     label4click++;
 
@@ -522,6 +556,14 @@ $('#genre-label5').on('click', function(){
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
 
+    label1click = 0;
+    label2click = 0;
+    label3click = 0;
+    label4click = 0;
+    label6click = 0;
+    label7click = 0;
+    label8click = 0;
+
     label5click++;
 
     return label5click;
@@ -561,6 +603,14 @@ $('#genre-label6').on('click', function(){
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label1click = 0;
+    label2click = 0;
+    label3click = 0;
+    label4click = 0;
+    label5click = 0;
+    label7click = 0;
+    label8click = 0;
 
     label6click++;
 
@@ -602,6 +652,14 @@ $('#genre-label7').on('click', function(){
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
 
+    label1click = 0;
+    label2click = 0;
+    label3click = 0;
+    label4click = 0;
+    label5click = 0;
+    label6click = 0;
+    label8click = 0;
+
     label7click++;
 
     return label7click;
@@ -641,6 +699,14 @@ $('#genre-label8').on('click', function(){
     TweenMax.to(rightCheck, 0, { display: "flex", width: 0 });
     TweenMax.to(leftCheck, 0.2, { width: 7, transformOrigin:"0% 50%", ease:Power1.easeInOut });
     TweenMax.to(rightCheck, 0.2, { delay: 0.2, width: 21, transformOrigin:"0% 50%", ease:Power1.easeInOut });
+
+    label1click = 0;
+    label2click = 0;
+    label3click = 0;
+    label4click = 0;
+    label5click = 0;
+    label6click = 0;
+    label7click = 0;
 
     label8click++;
 
