@@ -53,8 +53,6 @@ $('#genre-label1').on('click', function () {
     qColor.addClass('red');
     $('#genre-icons').html('<span class="red"><i class="fas fa-film"></i></span>');
 
-    console.log(window.data[0])
-
 });
 
 $('#genre-label2').on('click', function () {
@@ -414,4 +412,20 @@ function dashboardPage() {
         $(quesProperty[i]).html(JSON.parse(localStorage.getItem(questionsLocalStorage[i])));
 }
 
+function loadScores(){
+    var name1 = $('#score-1').find('td:nth-child(1)');
+    var score1 = $('#score-1').find('td:nth-child(2)');
+    var genre1 = $('#score-1').find('td:nth-child(3)');
 
+    name1.text(window.data[0].name)
+    score1.text(window.data[0].score + '/15')
+
+    if (window.data[0].genre === "test-genre"){
+
+    genre1.html('<span class="red"></span>')
+
+    }
+
+    else{}
+
+}
