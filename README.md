@@ -27,7 +27,7 @@ This is the first version of this application, made specifically for the first g
 https://evanab14.github.io/trivializer/
 
 ## Screenshot of website
-<img width="1161" alt="Screen Shot 2022-02-11 at 8 39 16 AM" src="https://user-images.githubusercontent.com/94859458/153601707-656d1119-1b51-4e96-85d5-cb4f4ceb798c.png">
+![Trivializer Website](http://evanab14.github.io/trivializer/assets/images/screenshot.jpg)
 
 ## Contribution
 Made by Evan Boileau, Rekha Leelaraman, Vijay Rao, Oleg Dobrovolskyi, and  Charles Johnston
