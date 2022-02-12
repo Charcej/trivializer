@@ -22,6 +22,8 @@ var count = 0;
 var nxtCount = 0;
 var totalScore = 0;
 var genre=0;
+var genreName = "";
+var difficulty = "";
 var tempQuizAnswers = [];
 
 //variables for the local storage
@@ -40,6 +42,7 @@ var dasbQuestion
 $('#genre-label1').on('click', function () {
 
     genre = "11";
+    genreName = "Movies";
 
     qColor.removeClass('red');
     qColor.removeClass('green'); 
@@ -58,6 +61,8 @@ $('#genre-label1').on('click', function () {
 $('#genre-label2').on('click', function () {
 
     genre = "17";
+    genreName = "Science";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -75,6 +80,8 @@ $('#genre-label2').on('click', function () {
 $('#genre-label3').on('click', function () {
 
     genre = "23";
+    genreName = "History";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -92,6 +99,8 @@ $('#genre-label3').on('click', function () {
 $('#genre-label4').on('click', function () {
 
     genre = "21";
+    genreName = "Sports";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -109,6 +118,8 @@ $('#genre-label4').on('click', function () {
 $('#genre-label5').on('click', function () {
 
     genre = "12";
+    genreName = "Music";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -126,6 +137,8 @@ $('#genre-label5').on('click', function () {
 $('#genre-label6').on('click', function () {
 
     genre = "14";
+    genreName = "Television";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -143,6 +156,8 @@ $('#genre-label6').on('click', function () {
 $('#genre-label7').on('click', function () {
 
     genre = "10";
+    genreName = "Books";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -160,6 +175,8 @@ $('#genre-label7').on('click', function () {
 $('#genre-label8').on('click', function () {
 
     genre = "22";
+    genreName = "Geography";
+
     qColor.removeClass('red');
     qColor.removeClass('green'); 
     qColor.removeClass('blue');
@@ -268,6 +285,7 @@ function quizQuestions() {
             return response.json();
         })
         .then(function (data) {
+            difficulty = data.results[0].difficulty;
             storingQuizData = JSON.stringify(data);
             jsonData = JSON.parse(storingQuizData);
             questionsLocalStorage = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "question15"];
@@ -349,7 +367,6 @@ function storeJSONData() {
 
 function countdown() {
 
-    console.log("Time left in countdown method: "+timeLeft);
     timerID = $('#timer').find('h2');
 
     timeInterval = setInterval(function () {
@@ -370,11 +387,7 @@ function countdown() {
             
         }
 
-        console.log(timeLeft);
-
     }, 1000);
-
-    console.log(timerID);
 
 }
 

@@ -267,6 +267,11 @@
                     <span><ion-icon name="information-circle-outline"></ion-icon></span>    
                 </div>
 
+                <div class="input-container">
+                    <p>Add Score :</p>
+                    <input id="hs-add" maxlength="5" type="text" />
+                </div>
+
                 <div class="twelve columns high-score">
 
                 <table>
@@ -1186,7 +1191,7 @@
                 score.push({ ...doc.data(), id: doc.id })
             })
 
-            window.data = score;
+            window.data = score; 
 
             loadScores();
     
@@ -1194,6 +1199,20 @@
     
         .catch(err => {
             // console.log(err.message)
+        })
+
+        const addScore = document.getElementById('hs-add');
+
+        addScore.addEventListener('keydown', function(){
+            if (event.keyCode == 13){
+
+                addDoc(colRef, {
+                    name: addScore.value,
+                    score: totalScore,
+                    genre: genreName,
+                    difficulty: difficulty,
+                })
+            }
         })
 
 </script>

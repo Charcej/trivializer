@@ -1136,3 +1136,33 @@ footer ul li:hover {
 .margin-bottom {
     margin-bottom: 80px;
 }
+
+.input-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: inline-flex;
+    height: 24px;
+}
+
+.input-container p {
+    font-family: 'Safety';
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+#hs-add {
+    outline: none;
+    border: 0;
+    display: flex;
+    height: 24px;
+    padding: 0 10px;
+    color: #fff;
+    background: #000;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 12px;
+}
