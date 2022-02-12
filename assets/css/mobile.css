@@ -1,0 +1,142 @@
+@media only screen and (max-width: 480px) {
+
+
+section {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    background: #158db7 url('../images/img-4.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    /* scroll-snap-align: start; */
+}
+
+/* -- Header Nav -- */
+
+header {
+    width: 100%;
+    height: 100px;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+.title-logo {
+    position: absolute;
+  
+}
+
+.title-logo img {
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+
+header ul {
+    width: 80%;
+    height: 60px;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+header ul li {
+    width: 50%;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-shadow: 0px 0px 3px #fff; */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header ul li span {
+    display: none;
+}
+
+
+#guide {
+    display: none;
+    
+}
+#mobile-1 {
+    margin-top: 240px;
+    margin-bottom: 60px;
+}
+
+#stick-buttons {
+    top: 144px;
+}
+#divCountdownBar{
+    display: none;
+    
+}
+/* #lblAnswer1, #lblAnswer2, #lblAnswer3, #lblAnswer4 {
+    max-width: 24ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+   
+
+} */
+
+.quiz-buttons label {
+    color: #fff;
+    margin: 10px 10px;
+}
+
+.contact-image {
+margin-bottom: 30px;
+
+}
+.e-mail {
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+#progressBar {
+    display: none;
+}
+.results-progress {
+    margin-bottom: 30px;
+}
+
+.results-progress:nth-child(2){
+    margin-bottom: 0px;
+}
+
+.q-row {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 0px;
+
+}
+
+.question-block {
+    margin-left: 0!important;
+    margin-bottom: 10px;
+    background: #000;
+}
+.about-test {
+    margin-bottom: 30px;
+}
+.about-test:nth-child(2) {
+    margin-bottom: 80px;
+}
+#selection {
+    margin-left: -5px;
+}
+
+
+}
