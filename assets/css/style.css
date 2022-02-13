@@ -140,13 +140,29 @@ header ul li {
 }
 
 header ul li span {
-    width: 15px;
-    height: 15px;
-    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
     position: absolute;
     top: 50px;
     left: 14px;
     background: #fff;
+}
+
+header ul li:nth-child(1) span{
+    background: var(--red);
+}
+
+header ul li:nth-child(2) span{
+    background: var(--green);
+}
+
+header ul li:nth-child(3) span{
+    background: var(--blue);
+}
+
+header ul li:nth-child(4) span{
+    background: var(--orange);
 }
 
 header ul li:before { 
@@ -1173,4 +1189,19 @@ footer ul li:hover {
     width: 60px;
     border-radius: 5px;
     font-size: 12px;
+}
+
+#add-icon {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -3px;
+}
+
+#add-icon:hover {
+    cursor: pointer;
 }

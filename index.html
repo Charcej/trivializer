@@ -269,7 +269,8 @@
 
                 <div class="input-container">
                     <p>Add Score :</p>
-                    <input id="hs-add" maxlength="5" type="text" />
+                    <input id="hs-add" maxlength="7" type="text" placeholder="Name" />
+                    <span id="add-icon"><ion-icon name="add-outline"></ion-icon></span>
                 </div>
 
                 <div class="twelve columns high-score">
@@ -1201,6 +1202,7 @@
         })
 
         const addScore = document.getElementById('hs-add');
+        const addIcon = document.getElementById('add-icon');
 
         addScore.addEventListener('keydown', function(){
             if (event.keyCode == 13){
@@ -1211,7 +1213,22 @@
                     genre: genreName,
                     difficulty: difficulty,
                 })
-            }
+
+                TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
+            } else {}
+        })
+
+        addIcon.addEventListener('click', function(){
+
+                addDoc(colRef, {
+                    name: addScore.value,
+                    score: totalScore,
+                    genre: genreName,
+                    difficulty: difficulty,
+                })
+
+                TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
+            
         })
 
 </script>
