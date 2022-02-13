@@ -1,4 +1,4 @@
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 550px)  and (min-width: 380px) {
 
 
 section {
@@ -137,6 +137,8 @@ margin-bottom: 30px;
 #selection {
     margin-left: -5px;
 }
-
+footer ul {
+    display: none;
+}
 
 }
