@@ -1230,6 +1230,11 @@
         })
 
                 TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
+                addScore.value = "";
+
+                addIcon.off();
+                addScore.off();
+                
             } else {}
         })
 
@@ -1258,6 +1263,10 @@
         })
                 
                 TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
+                addScore.value = "";
+
+                addIcon.off();
+                addScore.off();
             
         })
 
