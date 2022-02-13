@@ -234,7 +234,7 @@ footer ul li {
     letter-spacing: 1px;
 }
 
-footer ul li span {
+/* footer ul li span {
     width: 15px;
     height: 15px;
     border-radius: 5px;
@@ -242,6 +242,14 @@ footer ul li span {
     bottom: 50px;
     left: 15px;
     background: #fff;
+} */
+
+footer ul li span {
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 5px;
 }
 
 footer ul li:before { 
@@ -250,7 +258,7 @@ footer ul li:before {
     z-index: -1;
     left: 0;
     right: 0;
-    top: -27px;
+    top: -18px;
     height: 5px;
     background: #fff;
     transform: translateY(0px);

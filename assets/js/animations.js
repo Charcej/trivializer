@@ -158,20 +158,20 @@ $('header ul li').on('click', function(){
 
 });
 
-$('footer ul li').on('click', function(){
+// $('footer ul li').on('click', function(){
 
-    var span = $(this).find('span');
+//     var span = $(this).find('span');
 
-    var other = $('footer ul li').find('span');
-    var headerSpans = $('header ul li').find('span');
+//     var other = $('footer ul li').find('span');
+//     var headerSpans = $('header ul li').find('span');
 
-    TweenMax.to(span, 0, { opacity: 0 });
-    TweenMax.to(other, 0.4, { bottom: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
-    TweenMax.to(span, 0.4, { bottom: 0, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
-    TweenMax.to(headerSpans, 0.4, { top: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+//     TweenMax.to(span, 0, { opacity: 0 });
+//     TweenMax.to(other, 0.4, { bottom: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+//     TweenMax.to(span, 0.4, { bottom: 0, opacity: 1, transformOrigin:"50% 50%", ease:Power1.easeInOut });
+//     TweenMax.to(headerSpans, 0.4, { top: 50, opacity: 0, transformOrigin:"50% 50%", ease:Power1.easeInOut });
     
 
-});
+// });
 
 
 // Header + Footer Displays
