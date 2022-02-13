@@ -230,7 +230,7 @@ rdbAnswer2.addEventListener("click", function (event) {
     if (nxtCount == 14) {
         dashboardPage();
     }
-    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer2.textContent);
     nxtCount = nxtCount + 1;
     clearTimer();
     storeJSONData()
@@ -245,7 +245,7 @@ rdbAnswer3.addEventListener("click", function (event) {
     if (nxtCount == 14) {
         dashboardPage();
     }
-    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer3.textContent);
     nxtCount = nxtCount + 1;
     clearTimer();
     storeJSONData()
@@ -263,7 +263,7 @@ rdbAnswer4.addEventListener("click", function (event) {
     storeJSONData()
     timeBarCount();
     // countdown();
-    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer1.textContent);
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer4.textContent);
     nxtCount = nxtCount + 1;
 });
 
