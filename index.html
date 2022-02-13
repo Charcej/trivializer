@@ -1214,6 +1214,21 @@
                     difficulty: difficulty,
                 })
 
+        getDocs(q)
+            .then((snapshot) =>{
+            // console.log(snapshot.docs)
+
+            const score = []
+            snapshot.docs.forEach((doc) =>{
+                score.push({ ...doc.data(), id: doc.id })
+            })
+
+            window.data = score; 
+
+            loadScores();
+    
+        })
+
                 TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
             } else {}
         })
@@ -1227,6 +1242,21 @@
                     difficulty: difficulty,
                 })
 
+        getDocs(q)
+            .then((snapshot) =>{
+            // console.log(snapshot.docs)
+
+            const score = []
+            snapshot.docs.forEach((doc) =>{
+                score.push({ ...doc.data(), id: doc.id })
+            })
+
+            window.data = score; 
+
+            loadScores();
+
+        })
+                
                 TweenMax.to(addIcon, 0.4, { rotation: 90, color: "#239e55", transformOrigin:"50% 50%", ease:Power1.easeInOut });
             
         })
