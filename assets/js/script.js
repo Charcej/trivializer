@@ -38,6 +38,15 @@ var timeLeft = 10;
 //variables for the dashboard page
 var dasbQuestion
 
+
+$('#page-dashboard').on('click', function () {
+
+    if (genre==0){
+        dashboardPage();
+    }
+
+});
+
 //Clicking the genre in Home page
 $('#genre-label1').on('click', function () {
 
@@ -259,12 +268,12 @@ rdbAnswer4.addEventListener("click", function (event) {
     if (nxtCount == 14) {
         dashboardPage();
     }
+    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer4.textContent);
+    nxtCount = nxtCount + 1;
     clearTimer();
     storeJSONData()
     timeBarCount();
     // countdown();
-    userAnswerCheck(jsonData.results[nxtCount].correct_answer, lblAnswer4.textContent);
-    nxtCount = nxtCount + 1;
 });
 
 //Checking if the expected answer is equal to actual
@@ -289,6 +298,7 @@ function quizQuestions() {
             storingQuizData = JSON.stringify(data);
             jsonData = JSON.parse(storingQuizData);
             questionsLocalStorage = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "question15"];
+            console.log("API data: "+data);
             for (var i = 0; i < 15; i++) {
                 localStorage.setItem(questionsLocalStorage[i], JSON.stringify(data.results[i].question));
             }
@@ -300,8 +310,9 @@ function quizQuestions() {
 //display the questions and answer options to the front end from JSON object
 function storeJSONData() {
     var quesProperty = ["#q1", "#q2", "#q3", "#q4", "#q5", "#q6", "#q7", "#q8", "#q9", "#q10", "#q11", "#q12", "#q13", "#q14", "#q15"]
+    console.log("variable value of nxtCount"+nxtCount);
     question.innerHTML = jsonData.results[nxtCount].question;
-
+    console.log("Spitting the questions from storeJSONData: "+question.innerHTML);
         var answer1 = $(quesProperty[nxtCount]).parent().parent().find('.a1');
         var answer2 = $(quesProperty[nxtCount]).parent().parent().find('.a2');
         var answer3 = $(quesProperty[nxtCount]).parent().parent().find('.a3');
