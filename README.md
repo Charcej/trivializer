@@ -14,10 +14,10 @@ This is the first version of this application, made specifically for the first g
 * TWEENMAX
 
 ## Website
-https://evanab14.github.io/trivializer/
+https://charcej.github.io/trivializer/
 
 ## Screenshot of website
-![Trivializer Website](http://evanab14.github.io/trivializer/assets/images/screenshot.jpg)
+![Screen Shot 2022-02-26 at 4 24 09 PM](https://user-images.githubusercontent.com/94859458/155859584-4532eed7-4f05-4c7a-bf6c-e3a98221ab20.png)
 
 ## Contribution
 Made by Evan Boileau, Rekha Leelaraman, Vijay Rao, Oleg Dobrovolskyi, and  Charles Johnston
